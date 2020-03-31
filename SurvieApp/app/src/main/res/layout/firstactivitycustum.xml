@@ -2,6 +2,7 @@
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/contraiteun"
     android:layout_width="match_parent"
     android:layout_height="200dp">
 
@@ -38,7 +39,7 @@
         android:layout_width="25dp"
         android:layout_height="25dp"
         android:layout_marginTop="8dp"
-        android:src="@drawable/slash"
+        android:src="@drawable/iconslash"
         app:civ_border_color="#FF000000"
         app:civ_border_width="2dp"
         app:layout_constraintStart_toEndOf="@+id/valeurchanceplante"
@@ -49,7 +50,7 @@
         android:layout_width="25dp"
         android:layout_height="25dp"
         android:layout_marginTop="8dp"
-        android:src="@drawable/slash"
+        android:src="@drawable/iconslash"
         app:civ_border_color="#FF000000"
         app:civ_border_width="2dp"
         app:layout_constraintStart_toEndOf="@+id/valeurchancenourriture"
@@ -60,7 +61,7 @@
         android:layout_width="25dp"
         android:layout_height="25dp"
         android:layout_marginTop="8dp"
-        android:src="@drawable/slash"
+        android:src="@drawable/iconslash"
         app:civ_border_color="#FF000000"
         app:civ_border_width="2dp"
         app:layout_constraintStart_toEndOf="@+id/valeurchanceeau"
@@ -71,13 +72,13 @@
         android:layout_width="25dp"
         android:layout_height="25dp"
         android:layout_marginTop="8dp"
-        android:src="@drawable/slash"
+        android:src="@drawable/iconslash"
         app:civ_border_color="#FF000000"
         app:civ_border_width="2dp"
         app:layout_constraintStart_toEndOf="@+id/valeurchancesurvie"
         app:layout_constraintTop_toTopOf="@+id/valeurchancesurvie" />
 
-    <EditText
+    <TextView
         android:id="@+id/valeurchanceplante"
         android:layout_width="25dp"
         android:layout_height="25dp"
@@ -85,11 +86,10 @@
         android:layout_marginLeft="4dp"
         android:layout_marginTop="8dp"
         android:ems="10"
-        android:inputType="number"
         app:layout_constraintStart_toEndOf="@+id/plante"
         app:layout_constraintTop_toTopOf="@+id/plante" />
 
-    <EditText
+    <TextView
         android:id="@+id/valeurchancenourriture"
         android:layout_width="25dp"
         android:layout_height="25dp"
@@ -97,11 +97,10 @@
         android:layout_marginLeft="4dp"
         android:layout_marginTop="8dp"
         android:ems="10"
-        android:inputType="number"
         app:layout_constraintStart_toEndOf="@+id/nourriture"
         app:layout_constraintTop_toTopOf="@+id/nourriture" />
 
-    <EditText
+    <TextView
         android:id="@+id/valeurchanceeau"
         android:layout_width="25dp"
         android:layout_height="25dp"
@@ -109,7 +108,6 @@
         android:layout_marginLeft="4dp"
         android:layout_marginTop="8dp"
         android:ems="10"
-        android:inputType="number"
         app:layout_constraintStart_toEndOf="@+id/eau"
         app:layout_constraintTop_toTopOf="@+id/eau" />
 
@@ -119,7 +117,7 @@
         android:layout_height="25dp"
         android:layout_marginStart="85dp"
         android:layout_marginLeft="85dp"
-        android:src="@drawable/iconplante"
+        android:src="@drawable/iconblackplante"
         app:civ_border_color="#FF000000"
         app:civ_border_width="2dp"
         app:layout_constraintStart_toEndOf="@+id/survie"
@@ -131,7 +129,7 @@
         android:layout_height="25dp"
         android:layout_marginStart="85dp"
         android:layout_marginLeft="85dp"
-        android:src="@drawable/nutrition"
+        android:src="@drawable/iconblacksurvie"
         app:civ_border_color="#FF000000"
         app:civ_border_width="2dp"
         app:layout_constraintBottom_toBottomOf="@+id/imageregiondesurvie"
@@ -144,7 +142,7 @@
         android:layout_height="25dp"
         android:layout_marginStart="8dp"
         android:layout_marginLeft="8dp"
-        android:src="@drawable/cow"
+        android:src="@drawable/iconblackeau"
         app:civ_border_color="#FF000000"
         app:civ_border_width="2dp"
         app:layout_constraintBottom_toBottomOf="@+id/imageregiondesurvie"
@@ -157,7 +155,7 @@
         android:layout_height="125dp"
         android:layout_marginStart="32dp"
         android:layout_marginLeft="32dp"
-        android:src="@drawable/nature"
+        android:src="@drawable/regiondesert"
         app:civ_border_color="#FF000000"
         app:civ_border_width="2dp"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -170,7 +168,7 @@
         android:layout_height="25dp"
         android:layout_marginStart="8dp"
         android:layout_marginLeft="8dp"
-        android:src="@drawable/heart"
+        android:src="@drawable/iconblacksurvie"
         app:civ_border_color="#FF000000"
         app:civ_border_width="2dp"
         app:layout_constraintStart_toEndOf="@+id/imageregiondesurvie"
@@ -181,12 +179,11 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginBottom="16dp"
-        android:text="null"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
 
-    <EditText
+    <TextView
         android:id="@+id/valeurchancesurvie"
         android:layout_width="25dp"
         android:layout_height="25dp"
@@ -194,7 +191,6 @@
         android:layout_marginLeft="4dp"
         android:layout_marginTop="8dp"
         android:ems="10"
-        android:inputType="number"
         app:layout_constraintStart_toEndOf="@+id/survie"
         app:layout_constraintTop_toTopOf="@+id/survie" />
 
