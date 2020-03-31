@@ -17,6 +17,9 @@ import java.util.ArrayList;
 
 public class RecyclerViewAdapted1 extends RecyclerView.Adapter<RecyclerViewAdapted1.ViewHolder> {
 
+    /**
+     * Les variables ci-dessous servent a récupéré des valeur pour le recylcerview
+     */
     ArrayList<String> valeurRegion;
     ArrayList<Integer> valeurRegionImageview;
     ArrayList<String> valeurSurvie;
@@ -25,6 +28,19 @@ public class RecyclerViewAdapted1 extends RecyclerView.Adapter<RecyclerViewAdapt
     ArrayList<String> valeurPlante;
     LayoutInflater inflater;
 
+    /**
+     * Constructeur du recyclerview
+     * @param ctx contexte du recyclerview
+     *
+     * Toutes les variable ci-dessous on le même but :
+     * Variable tableau de région pour changé le rendu
+     * @param valeurRegion
+     * @param valeurRegionImageview
+     * @param valeurSurvie
+     * @param valeurNourriture
+     * @param valeurEau
+     * @param valeurPlante
+     */
     public RecyclerViewAdapted1(Context ctx,
                                 ArrayList<String> valeurRegion,
                                 ArrayList<Integer> valeurRegionImageview,
@@ -41,6 +57,10 @@ public class RecyclerViewAdapted1 extends RecyclerView.Adapter<RecyclerViewAdapt
         this.inflater = LayoutInflater.from(ctx);
     }
 
+    /**
+     * Changeur de vue récupére un XML pour l'utilisé comme cellule du recyclerview
+     * @return
+     */
     @NonNull
     @Override
     public RecyclerViewAdapted1.ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
@@ -48,22 +68,32 @@ public class RecyclerViewAdapted1 extends RecyclerView.Adapter<RecyclerViewAdapt
         return new ViewHolder(view);
     }
 
+    /**
+     * modificateur de vue récupére une valeur pour l'utilisé comme valeur définie pour une cellule du recyclerview
+     * @return
+     */
     @Override
     public void onBindViewHolder(@NonNull RecyclerViewAdapted1.ViewHolder holder, int position) {
         holder.textTitreRegion.setText(valeurRegion.get(position));
         holder.valeurSurvie.setText(valeurSurvie.get(position));
         holder.iconViewRegion.setImageResource(valeurRegionImageview.get(position));
-
-        //holder.valeurSurvie.setText(valeurSurvie.get(position));
         holder.valeurNourriture.setText(valeurNourriture.get(position));
         holder.valeurEau.setText(valeurEau.get(position));
         holder.valeurPlante.setText(valeurPlante.get(position));
     }
 
+    /**
+     * Taille du recyclerview
+     * @return
+     */
     @Override
     public int getItemCount() {
         return valeurRegion.size();
     }
+
+    /**
+     * Nouvelle vue elle récupére les valeurs qu'on lui donne pour modifié le rendu
+     */
     public class ViewHolder extends RecyclerView.ViewHolder{
 
         ImageView iconViewRegion;

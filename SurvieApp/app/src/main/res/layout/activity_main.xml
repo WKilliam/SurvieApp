@@ -18,6 +18,12 @@
         app:layout_constraintStart_toEndOf="@+id/cardView4"
         app:layout_constraintTop_toTopOf="@+id/cardView4">
 
+        <ImageView
+            android:id="@+id/carteimage"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:srcCompat="@drawable/guidetuto"
+            android:onClick="onClick"/>
     </androidx.cardview.widget.CardView>
 
     <androidx.recyclerview.widget.RecyclerView
@@ -41,7 +47,15 @@
         android:layout_marginLeft="32dp"
         app:layout_constraintBottom_toTopOf="@+id/firstrecyclerview"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent" >
+
+        <ImageView
+            android:id="@+id/voyageurimage"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:srcCompat="@drawable/voyageur"
+            android:onClick="onClick"/>
+    </androidx.cardview.widget.CardView>
 
     <androidx.cardview.widget.CardView
         android:id="@+id/cardView2"
@@ -53,6 +67,12 @@
         app:layout_constraintEnd_toStartOf="@+id/cardView3"
         app:layout_constraintTop_toTopOf="@+id/cardView3">
 
+        <ImageView
+            android:id="@+id/outilsutileimage"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:srcCompat="@drawable/mesoutils"
+            android:onClick="onClick"/>
     </androidx.cardview.widget.CardView>
 
     <androidx.cardview.widget.CardView
@@ -63,5 +83,13 @@
         android:layout_marginRight="32dp"
         app:layout_constraintBottom_toTopOf="@+id/firstrecyclerview"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent" >
+
+        <ImageView
+            android:id="@+id/couteausuisse"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:srcCompat="@drawable/outilsapropos"
+            android:onClick="onClick"/>
+    </androidx.cardview.widget.CardView>
 </androidx.constraintlayout.widget.ConstraintLayout>

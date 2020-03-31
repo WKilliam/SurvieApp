@@ -4,204 +4,228 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/contraiteun"
     android:layout_width="match_parent"
-    android:layout_height="200dp">
+    android:layout_height="200dp"
+    android:background="#011210">
 
 
-    <TextView
-        android:id="@+id/textnull"
-        android:layout_width="25dp"
-        android:layout_height="20dp"
-        android:layout_marginTop="8dp"
-        android:text="100"
-        app:layout_constraintStart_toEndOf="@+id/herbe3"
-        app:layout_constraintTop_toTopOf="@+id/herbe3" />
-
-    <TextView
-        android:id="@+id/textnull2"
-        android:layout_width="25dp"
-        android:layout_height="20dp"
-        android:layout_marginTop="8dp"
-        android:text="100"
-        app:layout_constraintStart_toEndOf="@+id/herbe7"
-        app:layout_constraintTop_toTopOf="@+id/herbe7" />
-
-    <TextView
-        android:id="@+id/textnull3"
-        android:layout_width="25dp"
-        android:layout_height="20dp"
-        android:layout_marginTop="8dp"
-        android:text="100"
-        app:layout_constraintStart_toEndOf="@+id/herbe6"
-        app:layout_constraintTop_toTopOf="@+id/herbe6" />
-
-    <de.hdodenhof.circleimageview.CircleImageView
-        android:id="@+id/herbe6"
-        android:layout_width="25dp"
-        android:layout_height="25dp"
-        android:layout_marginTop="8dp"
-        android:src="@drawable/iconslash"
-        app:civ_border_color="#FF000000"
-        app:civ_border_width="2dp"
-        app:layout_constraintStart_toEndOf="@+id/valeurchanceplante"
-        app:layout_constraintTop_toTopOf="@+id/valeurchanceplante" />
-
-    <de.hdodenhof.circleimageview.CircleImageView
-        android:id="@+id/herbe7"
-        android:layout_width="25dp"
-        android:layout_height="25dp"
-        android:layout_marginTop="8dp"
-        android:src="@drawable/iconslash"
-        app:civ_border_color="#FF000000"
-        app:civ_border_width="2dp"
-        app:layout_constraintStart_toEndOf="@+id/valeurchancenourriture"
-        app:layout_constraintTop_toTopOf="@+id/valeurchancenourriture" />
-
-    <de.hdodenhof.circleimageview.CircleImageView
-        android:id="@+id/herbe3"
-        android:layout_width="25dp"
-        android:layout_height="25dp"
-        android:layout_marginTop="8dp"
-        android:src="@drawable/iconslash"
-        app:civ_border_color="#FF000000"
-        app:civ_border_width="2dp"
-        app:layout_constraintStart_toEndOf="@+id/valeurchanceeau"
-        app:layout_constraintTop_toTopOf="@+id/valeurchanceeau" />
-
-    <de.hdodenhof.circleimageview.CircleImageView
-        android:id="@+id/herbe"
-        android:layout_width="25dp"
-        android:layout_height="25dp"
-        android:layout_marginTop="8dp"
-        android:src="@drawable/iconslash"
-        app:civ_border_color="#FF000000"
-        app:civ_border_width="2dp"
-        app:layout_constraintStart_toEndOf="@+id/valeurchancesurvie"
-        app:layout_constraintTop_toTopOf="@+id/valeurchancesurvie" />
-
-    <TextView
-        android:id="@+id/valeurchanceplante"
-        android:layout_width="25dp"
-        android:layout_height="25dp"
-        android:layout_marginStart="4dp"
-        android:layout_marginLeft="4dp"
-        android:layout_marginTop="8dp"
-        android:ems="10"
-        app:layout_constraintStart_toEndOf="@+id/plante"
-        app:layout_constraintTop_toTopOf="@+id/plante" />
-
-    <TextView
-        android:id="@+id/valeurchancenourriture"
-        android:layout_width="25dp"
-        android:layout_height="25dp"
-        android:layout_marginStart="4dp"
-        android:layout_marginLeft="4dp"
-        android:layout_marginTop="8dp"
-        android:ems="10"
-        app:layout_constraintStart_toEndOf="@+id/nourriture"
-        app:layout_constraintTop_toTopOf="@+id/nourriture" />
-
-    <TextView
-        android:id="@+id/valeurchanceeau"
-        android:layout_width="25dp"
-        android:layout_height="25dp"
-        android:layout_marginStart="4dp"
-        android:layout_marginLeft="4dp"
-        android:layout_marginTop="8dp"
-        android:ems="10"
-        app:layout_constraintStart_toEndOf="@+id/eau"
-        app:layout_constraintTop_toTopOf="@+id/eau" />
-
-    <de.hdodenhof.circleimageview.CircleImageView
-        android:id="@+id/plante"
-        android:layout_width="25dp"
-        android:layout_height="25dp"
-        android:layout_marginStart="85dp"
-        android:layout_marginLeft="85dp"
-        android:src="@drawable/iconblackplante"
-        app:civ_border_color="#FF000000"
-        app:civ_border_width="2dp"
-        app:layout_constraintStart_toEndOf="@+id/survie"
-        app:layout_constraintTop_toTopOf="@+id/survie" />
-
-    <de.hdodenhof.circleimageview.CircleImageView
-        android:id="@+id/nourriture"
-        android:layout_width="25dp"
-        android:layout_height="25dp"
-        android:layout_marginStart="85dp"
-        android:layout_marginLeft="85dp"
-        android:src="@drawable/iconblacksurvie"
-        app:civ_border_color="#FF000000"
-        app:civ_border_width="2dp"
-        app:layout_constraintBottom_toBottomOf="@+id/imageregiondesurvie"
-        app:layout_constraintStart_toEndOf="@+id/eau"
-        app:layout_constraintTop_toBottomOf="@+id/plante" />
-
-    <de.hdodenhof.circleimageview.CircleImageView
-        android:id="@+id/eau"
-        android:layout_width="25dp"
-        android:layout_height="25dp"
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
         android:layout_marginStart="8dp"
         android:layout_marginLeft="8dp"
-        android:src="@drawable/iconblackeau"
-        app:civ_border_color="#FF000000"
-        app:civ_border_width="2dp"
-        app:layout_constraintBottom_toBottomOf="@+id/imageregiondesurvie"
-        app:layout_constraintStart_toEndOf="@+id/imageregiondesurvie"
-        app:layout_constraintTop_toBottomOf="@+id/survie" />
-
-    <de.hdodenhof.circleimageview.CircleImageView
-        android:id="@+id/imageregiondesurvie"
-        android:layout_width="125dp"
-        android:layout_height="125dp"
-        android:layout_marginStart="32dp"
-        android:layout_marginLeft="32dp"
-        android:src="@drawable/regiondesert"
-        app:civ_border_color="#FF000000"
-        app:civ_border_width="2dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <de.hdodenhof.circleimageview.CircleImageView
-        android:id="@+id/survie"
-        android:layout_width="25dp"
-        android:layout_height="25dp"
-        android:layout_marginStart="8dp"
-        android:layout_marginLeft="8dp"
-        android:src="@drawable/iconblacksurvie"
-        app:civ_border_color="#FF000000"
-        app:civ_border_width="2dp"
-        app:layout_constraintStart_toEndOf="@+id/imageregiondesurvie"
-        app:layout_constraintTop_toTopOf="@+id/imageregiondesurvie" />
-
-    <TextView
-        android:id="@+id/texttyperegion"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="16dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginRight="8dp"
+        android:layout_marginBottom="8dp"
+        android:background="#538984"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.0">
 
-    <TextView
-        android:id="@+id/valeurchancesurvie"
-        android:layout_width="25dp"
-        android:layout_height="25dp"
-        android:layout_marginStart="4dp"
-        android:layout_marginLeft="4dp"
-        android:layout_marginTop="8dp"
-        android:ems="10"
-        app:layout_constraintStart_toEndOf="@+id/survie"
-        app:layout_constraintTop_toTopOf="@+id/survie" />
+        <de.hdodenhof.circleimageview.CircleImageView
+            android:id="@+id/nourriture"
+            android:layout_width="25dp"
+            android:layout_height="25dp"
+            android:layout_marginStart="80dp"
+            android:layout_marginLeft="80dp"
+            android:src="@drawable/iconblacksurvie"
+            app:civ_border_color="#FF000000"
+            app:civ_border_width="2dp"
+            app:layout_constraintBottom_toBottomOf="@+id/eau"
+            app:layout_constraintStart_toEndOf="@+id/eau"
+            app:layout_constraintTop_toTopOf="@+id/eau" />
 
-    <TextView
-        android:id="@+id/textnull1"
-        android:layout_width="25dp"
-        android:layout_height="20dp"
-        android:layout_marginTop="8dp"
-        android:text="100"
-        app:layout_constraintStart_toEndOf="@+id/herbe"
-        app:layout_constraintTop_toTopOf="@+id/herbe" />
+        <de.hdodenhof.circleimageview.CircleImageView
+            android:id="@+id/plante"
+            android:layout_width="25dp"
+            android:layout_height="25dp"
+            android:layout_marginStart="80dp"
+            android:layout_marginLeft="80dp"
+            android:src="@drawable/iconblackplante"
+            app:civ_border_color="#FF000000"
+            app:civ_border_width="2dp"
+            app:layout_constraintBottom_toBottomOf="@+id/survie"
+            app:layout_constraintStart_toEndOf="@+id/survie"
+            app:layout_constraintTop_toTopOf="@+id/survie" />
+
+        <de.hdodenhof.circleimageview.CircleImageView
+            android:id="@+id/survie"
+            android:layout_width="25dp"
+            android:layout_height="25dp"
+            android:layout_marginStart="24dp"
+            android:layout_marginLeft="24dp"
+            android:layout_marginBottom="70dp"
+            android:src="@drawable/iconblacksurvie"
+            app:civ_border_color="#FF000000"
+            app:civ_border_width="2dp"
+            app:layout_constraintBottom_toTopOf="@+id/texttyperegion"
+            app:layout_constraintStart_toEndOf="@+id/imageregiondesurvie"
+            app:layout_constraintTop_toTopOf="@+id/imageregiondesurvie" />
+
+        <TextView
+            android:id="@+id/valeurchanceplante"
+            android:layout_width="25dp"
+            android:layout_height="25dp"
+            android:ems="10"
+            android:gravity="center"
+            app:layout_constraintBottom_toBottomOf="@+id/valeurchancesurvie"
+            app:layout_constraintStart_toEndOf="@+id/plante"
+            app:layout_constraintTop_toTopOf="@+id/valeurchancesurvie" />
+
+        <TextView
+            android:id="@+id/valeurchancesurvie"
+            android:layout_width="25dp"
+            android:layout_height="25dp"
+            android:layout_marginTop="8dp"
+            android:ems="10"
+            android:gravity="center"
+            app:layout_constraintStart_toEndOf="@+id/survie"
+            app:layout_constraintTop_toTopOf="@+id/survie" />
+
+        <TextView
+            android:id="@+id/texttyperegion"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="16dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="@+id/imageregiondesurvie" />
+
+        <de.hdodenhof.circleimageview.CircleImageView
+            android:id="@+id/imageregiondesurvie"
+            android:layout_width="125dp"
+            android:layout_height="125dp"
+            android:layout_marginStart="16dp"
+            android:layout_marginLeft="16dp"
+            android:src="@drawable/regiondesert"
+            app:civ_border_color="#FF000000"
+            app:civ_border_width="2dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/valeurchancenourriture"
+            android:layout_width="25dp"
+            android:layout_height="25dp"
+            android:ems="10"
+            android:gravity="center"
+            app:layout_constraintBottom_toBottomOf="@+id/valeurchanceeau"
+            app:layout_constraintStart_toEndOf="@+id/nourriture"
+            app:layout_constraintTop_toTopOf="@+id/valeurchanceeau" />
+
+        <de.hdodenhof.circleimageview.CircleImageView
+            android:id="@+id/herbe7"
+            android:layout_width="25dp"
+            android:layout_height="25dp"
+            android:src="@drawable/iconslash"
+            app:civ_border_color="#FF000000"
+            app:civ_border_width="2dp"
+            app:layout_constraintBottom_toBottomOf="@+id/herbe3"
+            app:layout_constraintStart_toEndOf="@+id/valeurchancenourriture"
+            app:layout_constraintTop_toTopOf="@+id/herbe3" />
+
+        <TextView
+            android:id="@+id/valeurchanceeau"
+            android:layout_width="25dp"
+            android:layout_height="25dp"
+            android:layout_marginTop="8dp"
+            android:ems="10"
+            android:gravity="center"
+            app:layout_constraintBottom_toBottomOf="@+id/eau"
+            app:layout_constraintStart_toEndOf="@+id/eau"
+            app:layout_constraintTop_toTopOf="@+id/eau" />
+
+        <de.hdodenhof.circleimageview.CircleImageView
+            android:id="@+id/herbe"
+            android:layout_width="25dp"
+            android:layout_height="25dp"
+            android:layout_marginTop="8dp"
+            android:src="@drawable/iconslash"
+            app:civ_border_color="#FF000000"
+            app:civ_border_width="2dp"
+            app:layout_constraintStart_toEndOf="@+id/valeurchancesurvie"
+            app:layout_constraintTop_toTopOf="@+id/valeurchancesurvie" />
+
+        <de.hdodenhof.circleimageview.CircleImageView
+            android:id="@+id/eau"
+            android:layout_width="25dp"
+            android:layout_height="25dp"
+            android:layout_marginStart="24dp"
+            android:layout_marginLeft="24dp"
+            android:layout_marginTop="70dp"
+            android:src="@drawable/iconblackeau"
+            app:civ_border_color="#FF000000"
+            app:civ_border_width="2dp"
+            app:layout_constraintBottom_toBottomOf="@+id/imageregiondesurvie"
+            app:layout_constraintStart_toEndOf="@+id/imageregiondesurvie"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/textnull1"
+            android:layout_width="25dp"
+            android:layout_height="20dp"
+            android:layout_marginTop="8dp"
+            android:gravity="center"
+            android:text="100"
+            app:layout_constraintStart_toEndOf="@+id/herbe"
+            app:layout_constraintTop_toTopOf="@+id/herbe" />
+
+        <de.hdodenhof.circleimageview.CircleImageView
+            android:id="@+id/herbe3"
+            android:layout_width="25dp"
+            android:layout_height="25dp"
+            android:layout_marginTop="8dp"
+            android:src="@drawable/iconslash"
+            app:civ_border_color="#FF000000"
+            app:civ_border_width="2dp"
+            app:layout_constraintStart_toEndOf="@+id/valeurchanceeau"
+            app:layout_constraintTop_toTopOf="@+id/valeurchanceeau" />
+
+        <de.hdodenhof.circleimageview.CircleImageView
+            android:id="@+id/herbe6"
+            android:layout_width="25dp"
+            android:layout_height="25dp"
+            android:src="@drawable/iconslash"
+            app:civ_border_color="#FF000000"
+            app:civ_border_width="2dp"
+            app:layout_constraintBottom_toBottomOf="@+id/herbe"
+            app:layout_constraintStart_toEndOf="@+id/valeurchanceplante"
+            app:layout_constraintTop_toTopOf="@+id/herbe" />
+
+        <TextView
+            android:id="@+id/textnull3"
+            android:layout_width="25dp"
+            android:layout_height="20dp"
+            android:gravity="center"
+            android:text="100"
+            app:layout_constraintBottom_toBottomOf="@+id/textnull1"
+            app:layout_constraintStart_toEndOf="@+id/herbe6"
+            app:layout_constraintTop_toTopOf="@+id/textnull1" />
+
+        <TextView
+            android:id="@+id/textnull2"
+            android:layout_width="25dp"
+            android:layout_height="20dp"
+            android:gravity="center"
+            android:text="100"
+            app:layout_constraintBottom_toBottomOf="@+id/textnull"
+            app:layout_constraintStart_toEndOf="@+id/herbe7"
+            app:layout_constraintTop_toTopOf="@+id/textnull" />
+
+        <TextView
+            android:id="@+id/textnull"
+            android:layout_width="25dp"
+            android:layout_height="20dp"
+            android:layout_marginTop="8dp"
+            android:gravity="center"
+            android:text="100"
+            app:layout_constraintStart_toEndOf="@+id/herbe3"
+            app:layout_constraintTop_toTopOf="@+id/herbe3" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
 
