@@ -26,6 +26,7 @@ public class RecyclerViewAdapted1 extends RecyclerView.Adapter<RecyclerViewAdapt
     ArrayList<String> valeurNourriture;
     ArrayList<String> valeurEau;
     ArrayList<String> valeurPlante;
+    OnNoteListener onNoteListener;
     LayoutInflater inflater;
 
     /**
@@ -47,7 +48,8 @@ public class RecyclerViewAdapted1 extends RecyclerView.Adapter<RecyclerViewAdapt
                                 ArrayList<String> valeurSurvie,
                                 ArrayList<String> valeurNourriture,
                                 ArrayList<String> valeurEau,
-                                ArrayList<String> valeurPlante) {
+                                ArrayList<String> valeurPlante,
+                                OnNoteListener onNoteListener) {
         this.valeurRegion = valeurRegion;
         this.valeurRegionImageview = valeurRegionImageview;
         this.valeurSurvie = valeurSurvie;
@@ -55,6 +57,7 @@ public class RecyclerViewAdapted1 extends RecyclerView.Adapter<RecyclerViewAdapt
         this.valeurEau = valeurEau;
         this.valeurPlante = valeurPlante;
         this.inflater = LayoutInflater.from(ctx);
+        this.onNoteListener=onNoteListener;
     }
 
     /**
@@ -65,7 +68,7 @@ public class RecyclerViewAdapted1 extends RecyclerView.Adapter<RecyclerViewAdapt
     @Override
     public RecyclerViewAdapted1.ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
         View view = inflater.inflate(R.layout.firstactivitycustum,parent,false);
-        return new ViewHolder(view);
+        return new ViewHolder(view,onNoteListener);
     }
 
     /**
@@ -80,6 +83,7 @@ public class RecyclerViewAdapted1 extends RecyclerView.Adapter<RecyclerViewAdapt
         holder.valeurNourriture.setText(valeurNourriture.get(position));
         holder.valeurEau.setText(valeurEau.get(position));
         holder.valeurPlante.setText(valeurPlante.get(position));
+
     }
 
     /**
@@ -91,10 +95,12 @@ public class RecyclerViewAdapted1 extends RecyclerView.Adapter<RecyclerViewAdapt
         return valeurRegion.size();
     }
 
+
+
     /**
      * Nouvelle vue elle récupére les valeurs qu'on lui donne pour modifié le rendu
      */
-    public class ViewHolder extends RecyclerView.ViewHolder{
+    public class ViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener {
 
         ImageView iconViewRegion;
         TextView textTitreRegion;
@@ -102,9 +108,10 @@ public class RecyclerViewAdapted1 extends RecyclerView.Adapter<RecyclerViewAdapt
         TextView valeurEau;
         TextView valeurNourriture;
         TextView valeurPlante;
+        OnNoteListener onNoteListener;
 
 
-        public ViewHolder(@NonNull View itemView) {
+        public ViewHolder(@NonNull View itemView,OnNoteListener onNoteListener) {
             super(itemView);
             iconViewRegion = itemView.findViewById(R.id.imageregiondesurvie);
             textTitreRegion = itemView.findViewById(R.id.texttyperegion);
@@ -112,6 +119,17 @@ public class RecyclerViewAdapted1 extends RecyclerView.Adapter<RecyclerViewAdapt
             valeurEau = itemView.findViewById(R.id.valeurchanceeau);
             valeurPlante = itemView.findViewById(R.id.valeurchanceplante);
             valeurNourriture = itemView.findViewById(R.id.valeurchancenourriture);
+            this.onNoteListener = onNoteListener;
+            itemView.setOnClickListener(this);
         }
+
+        @Override
+        public void onClick(View v) {
+            onNoteListener.onNoteClick(getAdapterPosition());
+        }
+    }
+
+    public interface OnNoteListener{
+        void onNoteClick(int position);
     }
 }

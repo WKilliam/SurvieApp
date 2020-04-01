@@ -20,7 +20,7 @@ import com.learn.survieapp.readDataClass.ReaderData;
 import java.lang.reflect.Type;
 import java.util.ArrayList;
 
-public class MainActivity extends AppCompatActivity implements View.OnClickListener {
+public class MainActivity extends AppCompatActivity implements View.OnClickListener, RecyclerViewAdapted1.OnNoteListener {
 
     /**
      * Les variables ci-dessous servent à récupéré des valeurs bien presice pour l'affichage du recyclerview
@@ -48,7 +48,8 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                                                                     valeurSurvie,
                                                                     valeurNourriture,
                                                                     valeurEau,
-                                                                    valeurPlante);
+                                                                    valeurPlante,
+                                                        this);
 
         // permet de mettre le recyclerview dans une grille de 1
         GridLayoutManager gridLayoutManager = new GridLayoutManager(this,1,GridLayoutManager.VERTICAL,false);
@@ -144,5 +145,12 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             default:
                 break;
         }
+    }
+
+    @Override
+    public void onNoteClick(int position) {
+        Intent intent = new Intent(MainActivity.this, AProposActivity.class);
+        intent.putExtra("Genre","Homme");
+        startActivity(intent);
     }
 }
