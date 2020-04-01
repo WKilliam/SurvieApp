@@ -57,6 +57,18 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         data.setAdapter(recyclerViewAdapted1);
     }
 
+
+
+    @Override
+    public void onNoteClick(int position) {
+
+        String region = valeurRegion.get(position);
+        String dataTake = region+".json";
+        //Intent intentinfos = new Intent(MainActivity.this,CompassActivity.class);
+        Intent intentinfos = new Intent(MainActivity.this,GuideActivity.class);
+        intentinfos.putExtra("DataType",dataTake);
+        startActivity(intentinfos);
+    }
     /**
      * traitement du fichier json
      */
@@ -145,12 +157,5 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             default:
                 break;
         }
-    }
-
-    @Override
-    public void onNoteClick(int position) {
-        Intent intent = new Intent(MainActivity.this, AProposActivity.class);
-        intent.putExtra("Genre","Homme");
-        startActivity(intent);
     }
 }
