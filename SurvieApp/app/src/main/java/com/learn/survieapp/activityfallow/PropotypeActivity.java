@@ -26,8 +26,8 @@ public class PropotypeActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_propotype);
-        Log.i("takeid","image"+R.drawable.iconpetitcompas);//2131099760
-        Log.i("takeid","image"+R.drawable.iconpetitecarte);//2131099761
-        Log.i("takeid","image"+R.drawable.iconechampigion);//2131099757
+        Log.i("takeid","image"+R.drawable.regionforet);//2131099783
+        Log.i("takeid","image"+R.drawable.regionmontagne);//2131099784
+        Log.i("takeid","image"+R.drawable.regiondesert);//
     }
 }

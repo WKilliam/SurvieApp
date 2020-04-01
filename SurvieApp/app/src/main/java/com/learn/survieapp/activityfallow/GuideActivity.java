@@ -4,6 +4,8 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import android.content.Intent;
+import android.content.res.Resources;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
@@ -14,13 +16,14 @@ import com.learn.survieapp.R;
 import com.learn.survieapp.adaptateurRecyclerView.AdaptedGuide;
 import com.learn.survieapp.adaptateurRecyclerView.RecyclerViewAdapted1;
 import com.learn.survieapp.readDataClass.ReaderData;
+import com.learn.survieapp.readDataClass.ReaderDataGuideActivity;
 
 import java.lang.reflect.Type;
 import java.util.ArrayList;
 
 public class GuideActivity extends AppCompatActivity implements  AdaptedGuide.OnNoteListener{
 
-    ArrayList<Integer> mIconCategorie= new ArrayList<>();
+
     ArrayList<Integer> mRegionIcon= new ArrayList<>();
     ArrayList<String> mSurvieTypeText= new ArrayList<>();
     ArrayList<String> mSurvieTypeTextDetail= new ArrayList<>();
@@ -31,12 +34,14 @@ public class GuideActivity extends AppCompatActivity implements  AdaptedGuide.On
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_guide);
+
+        Intent srcintent = getIntent();
+        String datatype = srcintent.getStringExtra("DataType");
+
+        jSonAction(datatype);
+
+
         recyclerViewguide = findViewById(R.id.recviewgestionactivity);
-
-        int visible = View.VISIBLE;
-        Log.i("visibilite","test"+visible);
-
-
         adaptedGuide = new AdaptedGuide(this,mRegionIcon,mSurvieTypeText,mSurvieTypeTextDetail,this);
         GridLayoutManager gridLayoutManager = new GridLayoutManager(this,1,GridLayoutManager.VERTICAL,false);
         recyclerViewguide.setLayoutManager(gridLayoutManager);
@@ -52,8 +57,10 @@ public class GuideActivity extends AppCompatActivity implements  AdaptedGuide.On
      */
     public void jSonAction(String data){
 
+
+
         //transforme tous le json en String
-        String jsonFileString = ReaderData.getJsonFromAssets(getApplicationContext(), data);
+        String jsonFileString = ReaderDataGuideActivity.getJsonFromAssetsGuideA(getApplicationContext(),data);
 
         //Log.i("data", jsonFileString);
 
@@ -61,17 +68,18 @@ public class GuideActivity extends AppCompatActivity implements  AdaptedGuide.On
         Gson gson = new Gson();
 
         // Représente un type générique T
-        Type listUserType = new TypeToken<ArrayList<ReaderData>>() { }.getType();
+        Type listUserType = new TypeToken<ArrayList<ReaderDataGuideActivity>>() { }.getType();
 
         //Liste des objets
-        ArrayList<ReaderData> valeur = gson.fromJson(jsonFileString, listUserType);
+        ArrayList<ReaderDataGuideActivity> valeur = gson.fromJson(jsonFileString, listUserType);
 
         //remplace les valeur par les valeur du fichier json
         for (int i = 0; i < valeur.size(); i++) {
             Log.i("data", "> Item " + i + "\n" + valeur.get(i));
+            mRegionIcon.add(valeur.get(i).getjRegion());
+            mSurvieTypeText.add(valeur.get(i).getjTextTitre());
+            mSurvieTypeTextDetail.add(valeur.get(i).getjTexteDetail());
         }
-
-
 
         int regiondesert = R.drawable.regiondesert;
 

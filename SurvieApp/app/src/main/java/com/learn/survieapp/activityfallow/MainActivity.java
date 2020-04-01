@@ -92,7 +92,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         for (int i = 0; i < valeur.size(); i++) {
             Log.i("data", "> Item " + i + "\n" + valeur.get(i));
             valeurRegion.add(valeur.get(i).getValeur_Region_Data());
-            valeurRegionImageview.add(R.drawable.regiondesert);
+            valeurRegionImageview.add(valeur.get(i).getValeurRegionImageviewData());
             valeurSurvie.add(valeur.get(i).getValeur_Survie_Data());
             valeurNourriture.add(valeur.get(i).getValeur_Nourriture_Data());
             valeurEau.add(valeur.get(i).getValeur_Eau_Data());
