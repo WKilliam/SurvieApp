@@ -1,4 +1,4 @@
-package com.learn.survieapp.activityfallow;
+package com.learn.survieapp.activitySecondaire;
 
 import android.hardware.Sensor;
 import android.hardware.SensorEvent;

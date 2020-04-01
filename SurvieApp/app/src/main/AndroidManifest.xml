@@ -9,18 +9,17 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".activityfallow.BookGuideActivity"></activity>
-        <activity android:name=".activityfallow.PropotypeActivity">
-
-        </activity>
+        <activity android:name=".activitySecondaire.ActivityEquipement"></activity>
+        <activity android:name=".activitySecondaire.ActivityTechniqueSurvie" />
+        <activity android:name=".activitySecondaire.Activity24heure" />
+        <activity android:name=".activitySecondaire.BookGuideActivity" />
+        <activity android:name=".activityPrincipaux.PropotypeActivity" />
         <activity android:name=".adaptateurRecyclerView.AdaptedGuide" />
-        <activity android:name=".activityfallow.CompassActivity"></activity>
-        <activity android:name=".activityfallow.GuideActivity"></activity>
-        <activity android:name=".activityfallow.CouteauSuisseActivity">
-
-        </activity>
-        <activity android:name=".activityfallow.AProposActivity" />
-        <activity android:name=".activityfallow.MainActivity">
+        <activity android:name=".activitySecondaire.CompassActivity" />
+        <activity android:name=".activityPrincipaux.GuideActivity" />
+        <activity android:name=".activityPrincipaux.CouteauSuisseActivity" />
+        <activity android:name=".activityPrincipaux.AProposActivity" />
+        <activity android:name=".activityPrincipaux.MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

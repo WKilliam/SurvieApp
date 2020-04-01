@@ -1,18 +1,14 @@
-package com.learn.survieapp.activityfallow;
+package com.learn.survieapp.activitySecondaire;
 
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
 
-import com.learn.survieapp.R;
-
-public class BookGuideActivity extends AppCompatActivity {
+public class Activity24heure extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_book_guide);
-
-
+        setContentView(R.layout.activity_activity24heure);
     }
 }

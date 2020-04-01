@@ -1,4 +1,4 @@
-package com.learn.survieapp.activityfallow;
+package com.learn.survieapp.activityPrincipaux;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.GridLayoutManager;
@@ -12,6 +12,7 @@ import android.view.View;
 import com.google.gson.Gson;
 import com.google.gson.reflect.TypeToken;
 import com.learn.survieapp.R;
+import com.learn.survieapp.activitySecondaire.CompassActivity;
 import com.learn.survieapp.adaptateurRecyclerView.RecyclerViewAdapted2;
 import com.learn.survieapp.readDataClass.ReaderDataCouteauSuisse;
 
@@ -118,8 +119,19 @@ public class CouteauSuisseActivity extends AppCompatActivity implements View.OnC
     @Override
     public void onNoteClick(int position)
     {
-        Intent intent = new Intent(CouteauSuisseActivity.this, AProposActivity.class);
-        activityStartRecyclerviewClick(position,intent);
-        Log.i("Type", "Type name : " + position);
+        switch (position){
+            case 0:
+                Intent intentcompas = new Intent(CouteauSuisseActivity.this, CompassActivity.class);
+                startActivity(intentcompas);
+                break;
+            case 1:
+                Log.i("Type", "Type name : " + position);
+                break;
+            case 2:
+                Log.i("Type", "Type name : " + position);
+                break;
+            default:
+                break;
+        }
     }
 }

@@ -1,4 +1,4 @@
-package com.learn.survieapp.activityfallow;
+package com.learn.survieapp.activityPrincipaux;
 
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
@@ -8,20 +8,30 @@ import androidx.recyclerview.widget.RecyclerView;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
+import android.speech.tts.TextToSpeech;
 import android.util.Log;
 import android.view.View;
+import android.widget.Toast;
 
 import com.google.gson.Gson;
 import com.google.gson.reflect.TypeToken;
 import com.learn.survieapp.R;
+import com.learn.survieapp.activitySecondaire.BookGuideActivity;
 import com.learn.survieapp.adaptateurRecyclerView.RecyclerViewAdapted1;
 import com.learn.survieapp.readDataClass.ReaderData;
+import com.learn.survieapp.readDataClass.SpeakBot;
 
 import java.lang.reflect.Type;
 import java.util.ArrayList;
+import java.util.Locale;
 
-public class MainActivity extends AppCompatActivity implements View.OnClickListener, RecyclerViewAdapted1.OnNoteListener {
+public class MainActivity extends AppCompatActivity implements View.OnClickListener, RecyclerViewAdapted1.OnNoteListener , TextToSpeech.OnInitListener{
 
+    /**
+     * Les variables ci-dessous sont utilisé pour le Speakbot
+     */
+    TextToSpeech toSpeech;
+    int result;
     /**
      * Les variables ci-dessous servent à récupéré des valeurs bien presice pour l'affichage du recyclerview
      */
@@ -38,18 +48,13 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-
+        bot();
         jSonAction();
         data = findViewById(R.id.gestionrecyclerview);
 
         // lancement du recyclerview
-        recyclerViewAdapted1 = new RecyclerViewAdapted1(this,  valeurRegion,
-                                                                    valeurRegionImageview,
-                                                                    valeurSurvie,
-                                                                    valeurNourriture,
-                                                                    valeurEau,
-                                                                    valeurPlante,
-                                                        this);
+        recyclerViewAdapted1 = new RecyclerViewAdapted1(this,  valeurRegion,valeurRegionImageview,valeurSurvie,
+                                                                    valeurNourriture, valeurEau, valeurPlante, this);
 
         // permet de mettre le recyclerview dans une grille de 1
         GridLayoutManager gridLayoutManager = new GridLayoutManager(this,1,GridLayoutManager.VERTICAL,false);
@@ -57,14 +62,33 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         data.setAdapter(recyclerViewAdapted1);
     }
 
+    public void bot(){
 
+        toSpeech = new TextToSpeech(this, new TextToSpeech.OnInitListener() {
+            @Override
+            public void onInit(int status) {
+                if (status == TextToSpeech.SUCCESS) {
+                    result = toSpeech.setLanguage(Locale.FRANCE);
+                    if (result == TextToSpeech.LANG_MISSING_DATA || result == TextToSpeech.LANG_NOT_SUPPORTED)
+                    {
+                        Toast.makeText(getApplicationContext(),"probléme",Toast.LENGTH_SHORT).show();
+                    }else
+                    {
+                        SpeakBot bot = new SpeakBot();
+                        toSpeech.speak(bot.tutoriel(), TextToSpeech.QUEUE_FLUSH, null);
+                    }
+                } else {
+                    Toast.makeText(getApplicationContext(), "no mec", Toast.LENGTH_SHORT).show();
+                }
+            }
+        });
+    }
 
     @Override
     public void onNoteClick(int position) {
 
         String region = valeurRegion.get(position);
         String dataTake = region+".json";
-        //Intent intentinfos = new Intent(MainActivity.this,CompassActivity.class);
         Intent intentinfos = new Intent(MainActivity.this,GuideActivity.class);
         intentinfos.putExtra("DataType",dataTake);
         startActivity(intentinfos);
@@ -151,11 +175,16 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 Log.i("test","couteau");
                 break;
             case R.id.imageViewtutoriel:
-                Intent intenttuto = new Intent(MainActivity.this, PropotypeActivity.class);
+                Intent intenttuto = new Intent(MainActivity.this, BookGuideActivity.class);
                 startActivity(intenttuto);
                 break;
             default:
                 break;
         }
+    }
+
+    @Override
+    public void onInit(int status) {
+
     }
 }

@@ -1,21 +1,17 @@
-package com.learn.survieapp.activityfallow;
+package com.learn.survieapp.activityPrincipaux;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import android.content.Intent;
-import android.content.res.Resources;
 import android.os.Bundle;
 import android.util.Log;
-import android.view.View;
 
 import com.google.gson.Gson;
 import com.google.gson.reflect.TypeToken;
 import com.learn.survieapp.R;
 import com.learn.survieapp.adaptateurRecyclerView.AdaptedGuide;
-import com.learn.survieapp.adaptateurRecyclerView.RecyclerViewAdapted1;
-import com.learn.survieapp.readDataClass.ReaderData;
 import com.learn.survieapp.readDataClass.ReaderDataGuideActivity;
 
 import java.lang.reflect.Type;
