@@ -9,10 +9,17 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".activityfallow.CouteauSuisseActivity" >
+        <activity android:name=".activityfallow.PropotypeActivity">
 
         </activity>
-        <activity android:name=".activityfallow.AProposActivity" ></activity>
+        <activity android:name=".adaptateurRecyclerView.AdaptedGuide" />
+        <activity android:name=".activityfallow.GuideActivity">
+
+        </activity>
+        <activity android:name=".activityfallow.CouteauSuisseActivity">
+
+        </activity>
+        <activity android:name=".activityfallow.AProposActivity" />
         <activity android:name=".activityfallow.MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

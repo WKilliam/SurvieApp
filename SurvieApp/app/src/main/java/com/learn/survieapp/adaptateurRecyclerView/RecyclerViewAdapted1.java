@@ -4,7 +4,6 @@ import android.content.Context;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.TextView;
 
@@ -67,7 +66,7 @@ public class RecyclerViewAdapted1 extends RecyclerView.Adapter<RecyclerViewAdapt
     @NonNull
     @Override
     public RecyclerViewAdapted1.ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-        View view = inflater.inflate(R.layout.firstactivitycustum,parent,false);
+        View view = inflater.inflate(R.layout.first_activity_custum,parent,false);
         return new ViewHolder(view,onNoteListener);
     }
 

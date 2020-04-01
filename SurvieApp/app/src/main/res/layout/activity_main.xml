@@ -8,25 +8,6 @@
     android:background="#30615C"
     tools:context=".activityfallow.MainActivity">
 
-    <androidx.cardview.widget.CardView
-        android:id="@+id/gestioncardView"
-        android:layout_width="50dp"
-        android:layout_height="50dp"
-        android:layout_marginStart="40dp"
-        android:layout_marginLeft="40dp"
-        android:background="#9D2121"
-        app:layout_constraintBottom_toBottomOf="@+id/gestioncardView4"
-        app:layout_constraintStart_toEndOf="@+id/gestioncardView4"
-        app:layout_constraintTop_toTopOf="@+id/gestioncardView4">
-
-        <ImageView
-            android:id="@+id/gestioncarteimage"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:onClick="onClick"
-            app:srcCompat="@drawable/guidetuto" />
-    </androidx.cardview.widget.CardView>
-
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/gestionrecyclerview"
         android:layout_width="match_parent"
@@ -60,21 +41,20 @@
 
 
     <androidx.cardview.widget.CardView
-        android:id="@+id/gestioncardView2"
+        android:id="@+id/tutocarde"
         android:layout_width="50dp"
         android:layout_height="50dp"
-        android:layout_marginEnd="40dp"
-        android:layout_marginRight="40dp"
-        app:layout_constraintBottom_toBottomOf="@+id/gestioncardView3"
-        app:layout_constraintEnd_toStartOf="@+id/gestioncardView3"
-        app:layout_constraintTop_toTopOf="@+id/gestioncardView3">
+        app:layout_constraintBottom_toTopOf="@+id/gestionrecyclerview"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
 
         <ImageView
-            android:id="@+id/gestionoutilsutileimage"
+            android:id="@+id/imageViewtutoriel"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:onClick="onClick"
-            app:srcCompat="@drawable/mesoutils" />
+            app:srcCompat="@drawable/tutoriel" />
     </androidx.cardview.widget.CardView>
 
     <androidx.cardview.widget.CardView
@@ -94,4 +74,5 @@
             android:onClick="onClick"
             app:srcCompat="@drawable/outilsapropos" />
     </androidx.cardview.widget.CardView>
+
 </androidx.constraintlayout.widget.ConstraintLayout>

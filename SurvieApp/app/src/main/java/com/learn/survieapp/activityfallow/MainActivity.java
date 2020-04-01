@@ -102,9 +102,6 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     public void onClick(View v) {
 
         switch (v.getId()){
-            case R.id.gestioncarteimage:
-                Log.i("test","carte");
-                break;
             case R.id.gestionvoyageurimage:
                 AlertDialog.Builder builder = new AlertDialog.Builder(this);
                 builder.setTitle("Vous etez ?");
@@ -113,20 +110,20 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                     @Override
                     public void onClick(DialogInterface dialog, int which) {
 
-                        Intent intent = new Intent(MainActivity.this, AProposActivity.class);
+                        Intent intentGenre = new Intent(MainActivity.this, AProposActivity.class);
 
                         switch (which)
                         {
 
                             case 0: // Un Aventurier
                                 Log.i("test","homme");
-                                intent.putExtra("Genre","Homme");
-                                startActivity(intent);
+                                intentGenre.putExtra("Genre","Homme");
+                                startActivity(intentGenre);
                                 break;
                             case 1:// Un Aventuriére
                                 Log.i("test","femme");
-                                intent.putExtra("Genre","Femme");
-                                startActivity(intent);
+                                intentGenre.putExtra("Genre","Femme");
+                                startActivity(intentGenre);
                                 break;
                             default:
                                 break;
@@ -136,11 +133,14 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 AlertDialog dialog = builder.create();
                 dialog.show();
                 break;
-            case R.id.gestionoutilsutileimage:
-                Log.i("test","outils");
-                break;
             case R.id.gestionreturn:
+                Intent intentcouteausuisse = new Intent(MainActivity.this, CouteauSuisseActivity.class);
+                startActivity(intentcouteausuisse);
                 Log.i("test","couteau");
+                break;
+            case R.id.imageViewtutoriel:
+                Intent intenttuto = new Intent(MainActivity.this, PropotypeActivity.class);
+                startActivity(intenttuto);
                 break;
             default:
                 break;

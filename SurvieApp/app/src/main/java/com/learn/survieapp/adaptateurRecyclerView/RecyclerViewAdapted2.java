@@ -1,6 +1,8 @@
 package com.learn.survieapp.adaptateurRecyclerView;
 
 import android.content.Context;
+import android.os.Build;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -8,6 +10,7 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
+import androidx.annotation.RequiresApi;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.learn.survieapp.R;
@@ -23,6 +26,7 @@ public class RecyclerViewAdapted2 extends RecyclerView.Adapter<RecyclerViewAdapt
     ArrayList<Integer> tabSetImageView =new ArrayList<>();
     ArrayList<String> tabSetTextView=new ArrayList<>();
     LayoutInflater inflater;
+    OnNoteListener onNoteListener;
 
     /**
      * Constructeur du recyclerview
@@ -33,11 +37,13 @@ public class RecyclerViewAdapted2 extends RecyclerView.Adapter<RecyclerViewAdapt
      */
     public RecyclerViewAdapted2(Context ctx,
                                 ArrayList<Integer> tabSetImageView,
-                                ArrayList<String> tabSetTextView)
+                                ArrayList<String> tabSetTextView,
+                                OnNoteListener onNoteListener)
     {
         this.tabSetImageView = tabSetImageView;
         this.tabSetTextView = tabSetTextView;
         this.inflater = LayoutInflater.from(ctx);
+        this.onNoteListener=onNoteListener;
     }
     /**
      * Changeur de vue récupére un XML pour l'utilisé comme cellule du recyclerview
@@ -47,8 +53,8 @@ public class RecyclerViewAdapted2 extends RecyclerView.Adapter<RecyclerViewAdapt
     @Override
     public ViewHolder1 onCreateViewHolder(@NonNull ViewGroup parent, int viewType)
     {
-        View view = inflater.inflate(R.layout.firstactivitycustum,parent,false);
-        return new ViewHolder1(view);
+        View view = inflater.inflate(R.layout.couteau_suisse_custum,parent,false);
+        return new ViewHolder1(view,onNoteListener);
     }
     /**
      * modificateur de vue récupére une valeur pour l'utilisé comme valeur définie pour une cellule du recyclerview
@@ -59,6 +65,7 @@ public class RecyclerViewAdapted2 extends RecyclerView.Adapter<RecyclerViewAdapt
     {
         holder.imagesetbox.setImageResource(tabSetImageView.get(position));
         holder.textsetbox.setText(tabSetTextView.get(position));
+
     }
     /**
      * Taille du recyclerview
@@ -67,22 +74,32 @@ public class RecyclerViewAdapted2 extends RecyclerView.Adapter<RecyclerViewAdapt
     @Override
     public int getItemCount()
     {
-        return 1;
+        return tabSetTextView.size();
     }
     /**
      * Nouvelle vue elle récupére les valeurs qu'on lui donne pour modifié le rendu
      */
-    public class ViewHolder1 extends RecyclerView.ViewHolder
+    public class ViewHolder1 extends RecyclerView.ViewHolder implements View.OnClickListener
     {
 
         ImageView imagesetbox;
         TextView textsetbox;
 
-        public ViewHolder1(@NonNull View itemView)
+
+        public ViewHolder1(@NonNull View itemView, OnNoteListener onNoteListener)
         {
             super(itemView);
-            imagesetbox = itemView.findViewById(R.id.imageboxicon);
+            imagesetbox = itemView.findViewById(R.id.moniconeoutil);
             textsetbox = itemView.findViewById(R.id.textcouteauoutils);
+            itemView.setOnClickListener(this);
         }
+
+        @Override
+        public void onClick(View v) {
+            onNoteListener.onNoteClick(getAdapterPosition());
+        }
+    }
+    public interface OnNoteListener{
+        void onNoteClick(int position);
     }
 }
