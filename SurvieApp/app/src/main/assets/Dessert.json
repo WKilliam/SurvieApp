@@ -1,17 +1,26 @@
 [
-  {
-    "jRegion" : "regiondesert",
-    "jTextTitre": "Les Premiéres 24H",
-    "jTexteDetail": "Boussole"
-  },
-  {
-    "jRegion" : "regiondesert",
-    "jTextTitre": "Les Premiéres 72H",
-    "jTexteDetail": "Boussole"
-  },
-  {
-    "jRegion" : "regiondesert",
-    "jTextTitre": "Ce qui est bon a savoir",
-    "jTexteDetail": "Boussole"
-  }
+        {
+                "jRegion": "regiondesert",
+                "jTextTitre": "Les Premiéres 24H",
+                "jTexteDetail": "Boussole",
+                "jtab_24": ["regiondesert","regiondesert"],
+                "jtab_24_Titre": ["titre1","titre2"],
+                "jtab_24_Detail": ["bonjour je m'appel toto","bonjour je m'appel tata"]
+        },
+        {
+                "jRegion": "regiondesert",
+                "jTextTitre": "Les Premiéres 72H",
+                "jTexteDetail": "Boussole",
+                "jtab_72": ["regiongelee","regiondesert"],
+                "jtab_72_Titre": ["titre1","titre2"],
+                "jtab_72_Detail": ["bonjour je m'appel toto","bonjour je m'appel tata"]
+        },
+        {
+                "jRegion": "regiondesert",
+                "jTextTitre": "Ce qui est bon a savoir",
+                "jTexteDetail": "Boussole",
+                "jtab_BA": ["regiongelee","regiondesert"],
+                "jtab_BA_Titre": ["titre1","titre2"],
+                "jtab_BA_Detail": ["bonjour je m'appel toto","bonjour je m'appel tata"]
+        }
 ]

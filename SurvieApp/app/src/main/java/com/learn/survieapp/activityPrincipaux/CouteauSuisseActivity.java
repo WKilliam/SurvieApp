@@ -84,7 +84,7 @@ public class CouteauSuisseActivity extends AppCompatActivity implements View.OnC
     public void jSonAction(){
 
         //transforme tous le json en String
-        String jsonFileString = ReaderDataCouteauSuisse.getJsonFromAssetsCouteauS(getApplicationContext(), "DataCouteauSuisse.json");
+        String jsonFileString = ReaderDataCouteauSuisse.getJsonFromAssets(getApplicationContext(), "DataCouteauSuisse.json");
 
         Log.i("data", jsonFileString);
 

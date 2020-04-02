@@ -7,14 +7,12 @@ import androidx.recyclerview.widget.RecyclerView;
 import android.content.Intent;
 import android.content.res.Resources;
 import android.os.Bundle;
-import android.util.Log;
 
 import com.google.gson.Gson;
 import com.google.gson.reflect.TypeToken;
 import com.learn.survieapp.R;
 import com.learn.survieapp.activitySecondaire.ActivitySlide;
 import com.learn.survieapp.adaptateurRecyclerView.AdaptedGuide;
-import com.learn.survieapp.readDataClass.ReaderData;
 import com.learn.survieapp.readDataClass.ReaderDataGuideActivity;
 
 import java.lang.reflect.Type;
@@ -56,9 +54,8 @@ public class GuideActivity extends AppCompatActivity implements  AdaptedGuide.On
     public void jSonAction(String data){
 
 
-
         //transforme tous le json en String
-        String jsonFileString = ReaderDataGuideActivity.getJsonFromAssetsGuideA(getApplicationContext(), "Dessert.json");
+        String jsonFileString = ReaderDataGuideActivity.getJsonFromAssets(getApplicationContext(), "Dessertkkk.json");
 
         //Log.i("data", jsonFileString);
 
@@ -78,7 +75,7 @@ public class GuideActivity extends AppCompatActivity implements  AdaptedGuide.On
 
         //remplace les valeur par les valeur du fichier json
         for (int i = 0; i < valeur.size(); i++) {
-            
+
             final int resourceId = resources.getIdentifier(valeur.get(i).getjRegion(), "drawable", this.getPackageName());
             mRegionIcon.add(resourceId);
             mSurvieTypeText.add(valeur.get(i).getjTextTitre());
@@ -93,15 +90,18 @@ public class GuideActivity extends AppCompatActivity implements  AdaptedGuide.On
         Intent intent24 = new Intent(GuideActivity.this, ActivitySlide.class);
         switch (stat){
             case 0 :
-                intent24.putExtra("test","lol");
+                intent24.putExtra("JsonFile",datatype);
+                intent24.putExtra("index","24");
                 startActivity(intent24);
                 break;
             case 1 :
-                intent24.putExtra("test","lol2");
+                intent24.putExtra("JsonFile",datatype);
+                intent24.putExtra("index","72");
                 startActivity(intent24);
                 break;
             case 2 :
-                intent24.putExtra("test","lol3");
+                intent24.putExtra("JsonFile",datatype);
+                intent24.putExtra("index","BonASavoir");
                 startActivity(intent24);
                 break;
             default:

@@ -51,7 +51,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        //bot();
+        bot();
         jSonAction();
         data = findViewById(R.id.gestionrecyclerview);
 
@@ -96,7 +96,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         Log.i("data", "> ItemImage JSON " + position + "\n" + dataTake );
         Intent intentinfos = new Intent(MainActivity.this,GuideActivity.class);
         intentinfos.putExtra("DataType",dataTake);
-        //toSpeech.stop();
+        toSpeech.stop();
         startActivity(intentinfos);
     }
     /**
@@ -181,7 +181,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 break;
             case R.id.gestionreturn:
                 Intent intentcouteausuisse = new Intent(MainActivity.this, CouteauSuisseActivity.class);
-                //toSpeech.stop();
+                toSpeech.stop();
                 startActivity(intentcouteausuisse);
                 Log.i("test","couteau");
                 break;

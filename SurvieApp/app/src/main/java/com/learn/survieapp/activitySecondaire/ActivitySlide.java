@@ -1,35 +1,50 @@
 package com.learn.survieapp.activitySecondaire;
 
+import androidx.annotation.RequiresApi;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.viewpager.widget.ViewPager;
 
 import android.content.Intent;
+import android.content.res.Resources;
+import android.os.Build;
 import android.os.Bundle;
 import android.speech.tts.TextToSpeech;
 import android.text.Html;
+import android.util.Log;
 import android.widget.LinearLayout;
 import android.widget.TextView;
-import android.widget.Toast;
 
+import com.google.gson.Gson;
+import com.google.gson.reflect.TypeToken;
 import com.learn.survieapp.R;
 import com.learn.survieapp.adaptateurRecyclerView.SliderAdapter;
-import com.learn.survieapp.readDataClass.SpeakBot;
+import com.learn.survieapp.readDataClass.ReaderDataGuideActivity;
 
-import java.util.Locale;
+import java.lang.reflect.Type;
+import java.util.ArrayList;
+import java.util.Objects;
+
 
 public class ActivitySlide extends AppCompatActivity {
 
-    /**
-     * Les variables ci-dessous sont utilisé pour le Speakbot
-     */
+
     TextToSpeech toSpeech;
     int result;
-    String sIndex;
+    private String sJsonFileData;
+    private String sIndexData;
 
-    private ViewPager m24Slideview;
-    private LinearLayout m24linearLayout;
-    private SliderAdapter m24sliderAdapter;
-    private TextView[] m24Index;
+    private ViewPager sSlideview;
+    private LinearLayout sLinearLayout;
+    private SliderAdapter sSliderAdapter;
+    private TextView[] sIndex;
+
+    private String[] sDataValueInputTitle;
+    private String[] sDataValueInputTextDetail;
+    private int[] sDataValueInputImageview;
+
+    private ArrayList<String> sTakedTitle;
+    private ArrayList<String> sTakedDetail;
+    private ArrayList<Integer> sTakedImage;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -37,58 +52,128 @@ public class ActivitySlide extends AppCompatActivity {
         setContentView(R.layout.layout_all_activity_scrollview);
 
         Intent srcintent = getIntent();
-        sIndex = srcintent.getStringExtra("INDEX");
+        sJsonFileData = srcintent.getStringExtra("JsonFile");
+        sIndexData = srcintent.getStringExtra("index");
+
+
+        sLinearLayout = findViewById(R.id.linearlayoutid);
+        sSlideview = findViewById(R.id.viewpageid);
 
 
 
 
 
-        m24linearLayout = findViewById(R.id.linearlayoutid);
-        m24Slideview = findViewById(R.id.viewpageid);
 
+        jSonAction("Gelee.json","24");
 
+        sSliderAdapter = new SliderAdapter(this, sDataValueInputImageview, sDataValueInputTitle, sDataValueInputTextDetail);
 
-        int[] slide_image  ={
-
-                R.drawable.regiondesert,
-                R.drawable.regionmontagne,
-                R.drawable.regionforet,
-        };
-        String[] slide_title={
-
-                "toto",
-                "toto",
-                "toto"
-        };
-        String[] slide_descrip ={
-
-                "toto",
-                "toto",
-                "toto"
-        };
-
-        m24sliderAdapter = new SliderAdapter(this,slide_image,slide_title,slide_descrip);
-
-        m24Slideview.setAdapter(m24sliderAdapter);
-
-
+        sSlideview.setAdapter(sSliderAdapter);
         indicateurposition();
 
     }
 
-    public void indicateurposition(){
+    public void indicateurposition() {
 
 
-        m24Index = new TextView[3];
+        sIndex = new TextView[3];
 
-        for (int i = 0; i < m24Index.length ; i++) {
+        for (int i = 0; i < sIndex.length; i++) {
 
-            m24Index[i] = new TextView(this);
-            m24Index[i].setText(Html.fromHtml("#1B4A5B"));
-            m24Index[i].setTextSize(35);
-            m24Index[i].setTextColor(getResources().getColor(R.color.colorPrimaryDark));
-            m24linearLayout.addView(m24Index[i]);
+            sIndex[i] = new TextView(this);
+            sIndex[i].setText(Html.fromHtml("#1B4A5B"));
+            sIndex[i].setTextSize(35);
+            sIndex[i].setTextColor(getResources().getColor(R.color.colorAccent));
+            sLinearLayout.addView(sIndex[i]);
 
+        }
+    }
+
+    public void jSonAction(String data,String caract) {
+
+        //transforme tous le json en String
+        String jsonFileString = ReaderDataGuideActivity.getJsonFromAssets(getApplicationContext(), data);
+
+        //Log.i("data", jsonFileString);
+
+        // création de l'object Gson
+        Gson gson = new Gson();
+
+        // Représente un type générique T
+        Type listUserType = new TypeToken<ArrayList<ReaderDataGuideActivity>>() {}.getType();
+
+        //Liste des objets
+        ArrayList<ReaderDataGuideActivity> valeur = gson.fromJson(jsonFileString, listUserType);
+
+        String s = valeur.get(0).getJtab_24()[0];
+
+        Log.i("data", String.valueOf(s));
+
+        //remplace les valeur par les valeur du fichier json
+        moveTab(caract,valeur);
+    }
+
+    public void moveTab(String carac,ArrayList<ReaderDataGuideActivity> valeur){
+
+        Resources resources = this.getResources();
+
+
+        switch (carac){
+            case "24":
+                sTakedTitle = new ArrayList();
+                sTakedDetail = new ArrayList();
+                sTakedImage = new ArrayList();
+                for (int i = 0; i < valeur.get(0).getJtab_24().length ; i++) {
+                    sTakedTitle.add(valeur.get(0).getJtab_24_Titre()[i]);
+                    sTakedDetail.add(valeur.get(0).getJtab_24_Detail()[i]);
+                    final int resourceId = resources.getIdentifier(valeur.get(0).getJtab_24()[i], "drawable", this.getPackageName());
+                    sTakedImage.add(resourceId);
+                    Log.i("tableau ","Ressourcecheck = "+sTakedImage);
+                }
+                sDataValueInputTitle = new String[sTakedTitle.size()];
+                sDataValueInputTextDetail= new String[sTakedDetail.size()];
+                sDataValueInputImageview = new int[sTakedImage.size()];
+                for (int i = 0; i <sTakedImage.size() ; i++) {
+                    sDataValueInputTitle[i]= sTakedTitle.get(i);
+                    sDataValueInputTextDetail[i]= sTakedDetail.get(i);;
+                    sDataValueInputImageview[i]=sTakedImage.get(i);
+                }
+                break;
+            case "72":
+                for (int i = 0; i <valeur.get(1).getJtab_72().length ; i++) {
+                    sTakedTitle.add(valeur.get(1).getJtab_72_Titre()[i]);
+                    sTakedDetail.add(valeur.get(1).getJtab_72_Detail()[i]);
+                    final int resourceId = resources.getIdentifier(valeur.get(1).getJtab_72()[i], "drawable", this.getPackageName());
+                    sTakedImage.add(resourceId);
+                }
+                sDataValueInputTitle = new String[sTakedTitle.size()];
+                sDataValueInputTextDetail= new String[sTakedDetail.size()];
+                sDataValueInputImageview = new int[sTakedImage.size()];
+                for (int i = 0; i <sTakedImage.size() ; i++) {
+                    sDataValueInputTitle[i]= sTakedTitle.get(i);
+                    sDataValueInputTextDetail[i]= sTakedDetail.get(i);;
+                    sDataValueInputImageview[i]=sTakedImage.get(i);
+                }
+                break;
+            case "BonASavoir":
+                for (int i = 0; i <valeur.get(2).getJtab_BA().length ; i++) {
+                    sTakedTitle.add(valeur.get(2).getJtab_BA_Titre()[i]);
+                    sTakedDetail.add(valeur.get(2).getJtab_BA_Detail()[i]);
+                    final int resourceId = resources.getIdentifier(valeur.get(2).getJtab_72()[i], "drawable", this.getPackageName());
+                    sTakedImage.add(resourceId);
+
+                }
+                sDataValueInputTitle = new String[sTakedTitle.size()];
+                sDataValueInputTextDetail= new String[sTakedDetail.size()];
+                sDataValueInputImageview = new int[sTakedImage.size()];
+                for (int i = 0; i <sTakedImage.size() ; i++) {
+                    sDataValueInputTitle[i]= sTakedTitle.get(i);
+                    sDataValueInputTextDetail[i]= sTakedDetail.get(i);;
+                    sDataValueInputImageview[i]=sTakedImage.get(i);
+                }
+                break;
+            default:
+                break;
         }
     }
 }
