@@ -43,12 +43,12 @@ public class SpeakBot {
     public String tutoriel(){
 
         return "bienvenu sur cette application de survie,"+"\n"+
-                " grâce à elle vous allait pouvoir survivre plus longtemps."+"\n"+
-                "Elle possède des méthodes,guide alimentaire, et outils ( comme une boussole )," +"\n"+
-                " mais également des conseils bien précis pour les premières heures dans un milieu hostile."+"\n"+
-                " Pour commencer je vais vous présenter lapplication " +"\n"+
-                "les premières icônes en haut de lécran représente " +"\n"+
-                "la page à propos , tutoriel , et outils du campeur." +"\n"+
+                //" grâce à elle vous allait pouvoir survivre plus longtemps."+"\n"+
+                //"Elle possède des méthodes,guide alimentaire, et outils ( comme une boussole )," +"\n"+
+                //" mais également des conseils bien précis pour les premières heures dans un milieu hostile."+"\n"+
+                //" Pour commencer je vais vous présenter lapplication " +"\n"+
+                //"les premières icônes en haut de lécran représente " +"\n"+
+                //"la page à propos , tutoriel , et outils du campeur." +"\n"+
                 " Veuillez sil vous plait commencé par le tutoriel,"+"\n"+
                 "il s'agit de l'icône centrale";
     }

@@ -66,7 +66,7 @@ public class RecyclerViewAdapted1 extends RecyclerView.Adapter<RecyclerViewAdapt
     @NonNull
     @Override
     public RecyclerViewAdapted1.ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-        View view = inflater.inflate(R.layout.first_activity_custum,parent,false);
+        View view = inflater.inflate(R.layout.style_activity_first,parent,false);
         return new ViewHolder(view,onNoteListener);
     }
 

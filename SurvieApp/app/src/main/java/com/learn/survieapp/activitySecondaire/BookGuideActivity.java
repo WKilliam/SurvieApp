@@ -22,7 +22,7 @@ public class BookGuideActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_book_guide);
+        setContentView(R.layout.layout_all_activity_scrollview);
         bot();
 
     }

@@ -10,8 +10,12 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
         <activity android:name=".activitySecondaire.ActivityEquipement"></activity>
-        <activity android:name=".activitySecondaire.ActivityTechniqueSurvie" />
-        <activity android:name=".activitySecondaire.Activity24heure" />
+        <activity android:name=".activitySecondaire.ActivityTechniqueSurvie" >
+
+        </activity>
+        <activity android:name=".activitySecondaire.Activity24heure" >
+
+        </activity>
         <activity android:name=".activitySecondaire.BookGuideActivity" />
         <activity android:name=".activityPrincipaux.PropotypeActivity" />
         <activity android:name=".adaptateurRecyclerView.AdaptedGuide" />
