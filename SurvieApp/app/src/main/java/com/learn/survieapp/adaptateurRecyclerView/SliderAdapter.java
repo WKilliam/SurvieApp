@@ -1,6 +1,7 @@
 package com.learn.survieapp.adaptateurRecyclerView;
 
 import android.content.Context;
+import android.speech.tts.TextToSpeech;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -13,7 +14,6 @@ import androidx.viewpager.widget.PagerAdapter;
 
 import com.learn.survieapp.R;
 
-import java.util.ArrayList;
 
 public class SliderAdapter extends PagerAdapter {
 

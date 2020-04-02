@@ -8,32 +8,20 @@ import java.io.InputStream;
 
 public class ReaderDataGuideActivity {
 
-    Integer jRegion;
+    String jRegion;
     String jTextTitre;
     String jTexteDetail;
 
-    public Integer getjRegion() {
+    public String getjRegion() {
         return jRegion;
-    }
-
-    public void setjRegion(Integer jRegion) {
-        this.jRegion = jRegion;
     }
 
     public String getjTextTitre() {
         return jTextTitre;
     }
 
-    public void setjTextTitre(String jTextTitre) {
-        this.jTextTitre = jTextTitre;
-    }
-
     public String getjTexteDetail() {
         return jTexteDetail;
-    }
-
-    public void setjTexteDetail(String jTexteDetail) {
-        this.jTexteDetail = jTexteDetail;
     }
 
     @Override

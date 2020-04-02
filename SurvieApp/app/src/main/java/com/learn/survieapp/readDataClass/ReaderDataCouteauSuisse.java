@@ -7,16 +7,13 @@ import java.io.InputStream;
 
 public class ReaderDataCouteauSuisse {
 
-    Integer icon_outil;
+    String icon_outil;
     String Data_Text_Type_Icon;
 
-    public Integer getIcon_outil() {
+    public String getIcon_outil() {
         return icon_outil;
     }
 
-    public void setIcon_outil(Integer icon_outil) {
-        this.icon_outil = icon_outil;
-    }
 
     public String getData_Text_Type_Icon() {
         return Data_Text_Type_Icon;

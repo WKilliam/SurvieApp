@@ -1,8 +1,0 @@
-bienvenu sur cette application de survie grâce à
-elle vous allait pouvoir survivre elle possède des méthodes,guide alimentaire,
- et outils ( comme une boussole ) mais également des conseils bien précis pour
-  les premières heures dans un milieu hostile
-
-pour commencer je vais vous présenter l'application les premières icônes en haut
-de l'écran représente la page à propos , tutoriel , et outils du campeur veuillez
-s'il vous plait commencé par le tutoriel il s'agit de l'icône centrale

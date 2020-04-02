@@ -5,15 +5,43 @@
     android:id="@+id/gestionconstraint"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#30615C"
+    android:background="#1B4A5B"
     tools:context=".activityPrincipaux.MainActivity">
+
+    <de.hdodenhof.circleimageview.CircleImageView
+        android:id="@+id/gestionvoyageurimage"
+        android:layout_width="70dp"
+        android:layout_height="70dp"
+        android:layout_marginStart="32dp"
+        android:layout_marginLeft="32dp"
+        android:onClick="onClick"
+        android:src="@drawable/voyageur"
+        app:civ_border_color="#62B2CC"
+        app:civ_border_width="2dp"
+        app:layout_constraintBottom_toTopOf="@+id/gestionrecyclerview"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <de.hdodenhof.circleimageview.CircleImageView
+        android:id="@+id/gestionreturn"
+        android:layout_width="70dp"
+        android:layout_height="70dp"
+        android:layout_marginEnd="32dp"
+        android:layout_marginRight="32dp"
+        android:onClick="onClick"
+        android:src="@drawable/outilsapropos"
+        app:civ_border_color="#62B2CC"
+        app:civ_border_width="2dp"
+        app:layout_constraintBottom_toTopOf="@+id/gestionrecyclerview"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/gestionrecyclerview"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_marginTop="100dp"
-        android:background="#88AE89"
+        android:background="#62B2CC"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="1.0"
@@ -21,58 +49,19 @@
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="1.0" />
 
-    <androidx.cardview.widget.CardView
-        android:id="@+id/gestioncardView4"
-        android:layout_width="50dp"
-        android:layout_height="50dp"
-        android:layout_marginStart="32dp"
-        android:layout_marginLeft="32dp"
+
+    <de.hdodenhof.circleimageview.CircleImageView
+        android:id="@+id/imageViewtutoriel"
+        android:layout_width="70dp"
+        android:layout_height="70dp"
+        android:onClick="onClick"
+        android:src="@drawable/tutoriel"
+        app:civ_border_color="#62B2CC"
+        app:civ_border_width="2dp"
         app:layout_constraintBottom_toTopOf="@+id/gestionrecyclerview"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent">
-
-        <ImageView
-            android:id="@+id/gestionvoyageurimage"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:onClick="onClick"
-            app:srcCompat="@drawable/voyageur" />
-    </androidx.cardview.widget.CardView>
-
-
-    <androidx.cardview.widget.CardView
-        android:id="@+id/tutocarde"
-        android:layout_width="50dp"
-        android:layout_height="50dp"
-        app:layout_constraintBottom_toTopOf="@+id/gestionrecyclerview"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent">
-
-        <ImageView
-            android:id="@+id/imageViewtutoriel"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:onClick="onClick"
-            app:srcCompat="@drawable/tutoriel" />
-    </androidx.cardview.widget.CardView>
-
-    <androidx.cardview.widget.CardView
-        android:id="@+id/gestioncardView3"
-        android:layout_width="50dp"
-        android:layout_height="50dp"
-        android:layout_marginEnd="32dp"
-        android:layout_marginRight="32dp"
-        app:layout_constraintBottom_toTopOf="@+id/gestionrecyclerview"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="parent">
-
-        <ImageView
-            android:id="@+id/gestionreturn"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:onClick="onClick"
-            app:srcCompat="@drawable/outilsapropos" />
-    </androidx.cardview.widget.CardView>
+        app:layout_constraintEnd_toStartOf="@+id/gestionreturn"
+        app:layout_constraintStart_toEndOf="@+id/gestionvoyageurimage"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.533" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

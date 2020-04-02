@@ -1,14 +1,30 @@
 [
   {
-    "icon_outil" : 2131099760,
+    "icon_outil" : "iconpetitcompas",
     "Data_Text_Type_Icon": "Boussole"
   },
   {
-    "icon_outil" : 2131099761,
+    "icon_outil" : "iconpetitecarte",
     "Data_Text_Type_Icon": "Carte"
   },
   {
-    "icon_outil" : 2131099757,
+    "icon_outil" : "iconechampigion",
     "Data_Text_Type_Icon": "Guide des Champignions"
+  },
+  {
+    "icon_outil" : "ph",
+    "Data_Text_Type_Icon": "De la Chimie Naturel"
+  },
+  {
+    "icon_outil" : "translation",
+    "Data_Text_Type_Icon": "Morse Translate"
+  },
+  {
+    "icon_outil" : "robot",
+    "Data_Text_Type_Icon": "Narrateur"
+  },
+  {
+    "icon_outil" : "sos",
+    "Data_Text_Type_Icon": "S.O.S"
   }
 ]

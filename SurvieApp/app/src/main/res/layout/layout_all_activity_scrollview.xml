@@ -5,7 +5,7 @@
     android:id="@+id/relativealllayout"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".activitySecondaire.Activity24heure">
+    tools:context=".activitySecondaire.ActivitySlide">
 
     <androidx.viewpager.widget.ViewPager
         android:id="@+id/viewpageid"

@@ -1,26 +1,34 @@
 [
   {
-    "valeur_Region_Data" :"Dessert",
-    "valeur_Region_Imageview_Data" :2131099782,
-    "valeur_Survie_Data" :"3",
-    "valeur_Nourriture_Data" :"6",
-    "valeur_Eau_Data":"7",
-    "valeur_Plante_Data" :"8"
+    "dLinkData": "Dessert",
+    "dvaleur_Region_Imageview_Data" :"regiondesert",
+    "dmilieu_Region_Data" :"Milieu Dessertique",
+    "dtaux_Survie_Data" :"33 %",
+    "dtaux_Eau_Data" :"33 %",
+    "dtaux_Plante_Data" :"33 %"
   },
   {
-    "valeur_Region_Data" :"Montagne",
-    "valeur_Region_Imageview_Data" :2131099784,
-    "valeur_Survie_Data" :"3",
-    "valeur_Nourriture_Data" :"6",
-    "valeur_Eau_Data":"7",
-    "valeur_Plante_Data" :"8"
+    "dLinkData": "Foret",
+    "dvaleur_Region_Imageview_Data" :"regionforet",
+    "dmilieu_Region_Data" :"Milieu Foret",
+    "dtaux_Survie_Data" :"33 %",
+    "dtaux_Eau_Data" :"33 %",
+    "dtaux_Plante_Data" :"33 %"
   },
   {
-    "valeur_Region_Data" :"Foret",
-    "valeur_Region_Imageview_Data" :2131099783,
-    "valeur_Survie_Data" :"3",
-    "valeur_Nourriture_Data" :"6",
-    "valeur_Eau_Data":"7",
-    "valeur_Plante_Data" :"8"
+    "dLinkData": "Montagne",
+    "dvaleur_Region_Imageview_Data" :"regionmontagne",
+    "dmilieu_Region_Data" :"Milieu Montagne",
+    "dtaux_Survie_Data" :"33 %",
+    "dtaux_Eau_Data" :"33 %",
+    "dtaux_Plante_Data" :"33 %"
+  },
+  {
+    "dLinkData": "Gelee",
+    "dvaleur_Region_Imageview_Data" :"regionglace",
+    "dmilieu_Region_Data" :"Milieu Gelée",
+    "dtaux_Survie_Data" :"33 %",
+    "dtaux_Eau_Data" :"33 %",
+    "dtaux_Plante_Data" :"33 %"
   }
 ]

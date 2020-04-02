@@ -9,15 +9,12 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".activitySecondaire.ActivityEquipement"></activity>
-        <activity android:name=".activitySecondaire.ActivityTechniqueSurvie" >
+        <activity android:name=".activitySecondaire.ActivitySlide" >
 
         </activity>
-        <activity android:name=".activitySecondaire.Activity24heure" >
+        <activity android:name=".activityPrincipaux.PropotypeActivity" >
 
         </activity>
-        <activity android:name=".activitySecondaire.BookGuideActivity" />
-        <activity android:name=".activityPrincipaux.PropotypeActivity" />
         <activity android:name=".adaptateurRecyclerView.AdaptedGuide" />
         <activity android:name=".activitySecondaire.CompassActivity" />
         <activity android:name=".activityPrincipaux.GuideActivity" />

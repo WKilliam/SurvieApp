@@ -89,7 +89,7 @@ public class RecyclerViewAdapted2 extends RecyclerView.Adapter<RecyclerViewAdapt
         public ViewHolder1(@NonNull View itemView, OnNoteListener onNoteListener)
         {
             super(itemView);
-            imagesetbox = itemView.findViewById(R.id.moniconeoutil);
+            imagesetbox = itemView.findViewById(R.id.imageViewcardview);
             textsetbox = itemView.findViewById(R.id.textcouteauoutils);
             itemView.setOnClickListener(this);
         }

@@ -14,50 +14,38 @@ import com.learn.survieapp.R;
 
 import java.util.ArrayList;
 
-public class RecyclerViewAdapted1 extends RecyclerView.Adapter<RecyclerViewAdapted1.ViewHolder> {
+public class FristActRVAdapted extends RecyclerView.Adapter<FristActRVAdapted.ViewHolder> {
 
     /**
      * Les variables ci-dessous servent a récupéré des valeur pour le recylcerview
      */
-    ArrayList<String> valeurRegion;
-    ArrayList<Integer> valeurRegionImageview;
-    ArrayList<String> valeurSurvie;
-    ArrayList<String> valeurNourriture;
+    ArrayList<String> rvTextRegion;
+    ArrayList<Integer> rvRegionImageview;
+    ArrayList<String> rvSurvie;
     ArrayList<String> valeurEau;
     ArrayList<String> valeurPlante;
     OnNoteListener onNoteListener;
     LayoutInflater inflater;
 
-    /**
-     * Constructeur du recyclerview
-     * @param ctx contexte du recyclerview
-     *
-     * Toutes les variable ci-dessous on le même but :
-     * Variable tableau de région pour changé le rendu
-     * @param valeurRegion
-     * @param valeurRegionImageview
-     * @param valeurSurvie
-     * @param valeurNourriture
-     * @param valeurEau
-     * @param valeurPlante
-     */
-    public RecyclerViewAdapted1(Context ctx,
-                                ArrayList<String> valeurRegion,
-                                ArrayList<Integer> valeurRegionImageview,
-                                ArrayList<String> valeurSurvie,
-                                ArrayList<String> valeurNourriture,
-                                ArrayList<String> valeurEau,
-                                ArrayList<String> valeurPlante,
-                                OnNoteListener onNoteListener) {
-        this.valeurRegion = valeurRegion;
-        this.valeurRegionImageview = valeurRegionImageview;
-        this.valeurSurvie = valeurSurvie;
-        this.valeurNourriture = valeurNourriture;
+    public FristActRVAdapted(Context ctx,
+                             ArrayList<String> rvTextRegion,
+                             ArrayList<Integer> rvRegionImageview,
+                             ArrayList<String> rvSurvie,
+                             ArrayList<String> valeurEau,
+                             ArrayList<String> valeurPlante,
+                             OnNoteListener onNoteListener)
+    {
+        this.rvTextRegion = rvTextRegion;
+        this.rvRegionImageview = rvRegionImageview;
+        this.rvSurvie = rvSurvie;
         this.valeurEau = valeurEau;
         this.valeurPlante = valeurPlante;
+        this.onNoteListener = onNoteListener;
         this.inflater = LayoutInflater.from(ctx);
-        this.onNoteListener=onNoteListener;
     }
+
+
+
 
     /**
      * Changeur de vue récupére un XML pour l'utilisé comme cellule du recyclerview
@@ -65,7 +53,7 @@ public class RecyclerViewAdapted1 extends RecyclerView.Adapter<RecyclerViewAdapt
      */
     @NonNull
     @Override
-    public RecyclerViewAdapted1.ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
+    public FristActRVAdapted.ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
         View view = inflater.inflate(R.layout.style_activity_first,parent,false);
         return new ViewHolder(view,onNoteListener);
     }
@@ -75,11 +63,10 @@ public class RecyclerViewAdapted1 extends RecyclerView.Adapter<RecyclerViewAdapt
      * @return
      */
     @Override
-    public void onBindViewHolder(@NonNull RecyclerViewAdapted1.ViewHolder holder, int position) {
-        holder.textTitreRegion.setText(valeurRegion.get(position));
-        holder.valeurSurvie.setText(valeurSurvie.get(position));
-        holder.iconViewRegion.setImageResource(valeurRegionImageview.get(position));
-        holder.valeurNourriture.setText(valeurNourriture.get(position));
+    public void onBindViewHolder(@NonNull FristActRVAdapted.ViewHolder holder, int position) {
+        holder.textTitreRegion.setText(rvTextRegion.get(position));
+        holder.valeurSurvie.setText(rvSurvie.get(position));
+        holder.iconViewRegion.setImageResource(rvRegionImageview.get(position));
         holder.valeurEau.setText(valeurEau.get(position));
         holder.valeurPlante.setText(valeurPlante.get(position));
 
@@ -91,7 +78,7 @@ public class RecyclerViewAdapted1 extends RecyclerView.Adapter<RecyclerViewAdapt
      */
     @Override
     public int getItemCount() {
-        return valeurRegion.size();
+        return rvTextRegion.size();
     }
 
 
@@ -105,7 +92,6 @@ public class RecyclerViewAdapted1 extends RecyclerView.Adapter<RecyclerViewAdapt
         TextView textTitreRegion;
         TextView valeurSurvie;
         TextView valeurEau;
-        TextView valeurNourriture;
         TextView valeurPlante;
         OnNoteListener onNoteListener;
 
@@ -113,11 +99,10 @@ public class RecyclerViewAdapted1 extends RecyclerView.Adapter<RecyclerViewAdapt
         public ViewHolder(@NonNull View itemView,OnNoteListener onNoteListener) {
             super(itemView);
             iconViewRegion = itemView.findViewById(R.id.imageregiondesurvie);
-            textTitreRegion = itemView.findViewById(R.id.texttyperegion);
-            valeurSurvie = itemView.findViewById(R.id.valeurchancesurvie);
-            valeurEau = itemView.findViewById(R.id.valeurchanceeau);
-            valeurPlante = itemView.findViewById(R.id.valeurchanceplante);
-            valeurNourriture = itemView.findViewById(R.id.valeurchancenourriture);
+            textTitreRegion = itemView.findViewById(R.id.texttitretype);
+            valeurSurvie = itemView.findViewById(R.id.tauxsurvietext);
+            valeurEau = itemView.findViewById(R.id.tauxdehydratext);
+            valeurPlante = itemView.findViewById(R.id.tauxplantetext);
             this.onNoteListener = onNoteListener;
             itemView.setOnClickListener(this);
         }

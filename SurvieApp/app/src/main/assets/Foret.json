@@ -1,16 +1,16 @@
 [
   {
-    "jRegion" : 2131099783,
+    "jRegion" : "regionforet",
     "jTextTitre": "Les Premiéres 24H",
     "jTexteDetail": "Boussole"
   },
   {
-    "jRegion" :2131099783,
+    "jRegion" :"regionforet",
     "jTextTitre": "Les Premiéres 72H",
     "jTexteDetail": "Boussole"
   },
   {
-    "jRegion" : 2131099783,
+    "jRegion" : "regionforet",
     "jTextTitre": "Ce qui est bon a savoir",
     "jTexteDetail": "Dans les déserts chauds, contrairement aux environnements froids,le but n'est pas tant de se calfeutrer, à moins de trouver refuge dans une habitation faite de matériaux isolants, comme la pierre, que de trouver un abri aéré. Les tentes des nomades offrent un asile tempéré, à condition d'être ouvertes pour favoriser l'installation d'un courant d'air qui évacue la chaleur. En effet, la toile frappée par les rayons du soleil emmagasine de la chaleur et réchauffe l'air à son contact. Celui-ci s'élève, créant par convection un courant d'air, qui aspire de l'air extérieur moins chaud sous la tente. Et plus la toile est sombre, plus sa surface est chaude et plus les mouvements de convection sont importants. Et le ventilateur de toile efficace !"
   }

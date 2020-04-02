@@ -40,6 +40,15 @@ import java.util.Locale;
 
 public class SpeakBot {
 
+    public String aPHomme(){
+        return "Vous êtes sur la page à propos, jeune Aventurier." +
+                " By Teddy";
+    }
+    public String aPFemme(){
+        return "Vous êtes sur la page à propos, jeune Aventuriére." +
+                " By Teddy";
+    }
+
     public String tutoriel(){
 
         return "bienvenu sur cette application de survie,"+"\n"+
@@ -51,5 +60,13 @@ public class SpeakBot {
                 //"la page à propos , tutoriel , et outils du campeur." +"\n"+
                 " Veuillez sil vous plait commencé par le tutoriel,"+"\n"+
                 "il s'agit de l'icône centrale";
+    }
+
+    public String couteauSuisse() {
+        return "vous êtes dans le, menu couteau suisse.";
+    }
+
+    public String testbot(String string){
+        return string;
     }
 }

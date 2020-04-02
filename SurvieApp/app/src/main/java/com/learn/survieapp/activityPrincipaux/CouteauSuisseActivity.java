@@ -5,22 +5,35 @@ import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import android.content.Intent;
+import android.content.res.Resources;
 import android.os.Bundle;
+import android.speech.tts.TextToSpeech;
 import android.util.Log;
 import android.view.View;
+import android.widget.Toast;
 
 import com.google.gson.Gson;
 import com.google.gson.reflect.TypeToken;
 import com.learn.survieapp.R;
+import com.learn.survieapp.activitySecondaire.ActivitySlide;
 import com.learn.survieapp.activitySecondaire.CompassActivity;
 import com.learn.survieapp.adaptateurRecyclerView.RecyclerViewAdapted2;
 import com.learn.survieapp.readDataClass.ReaderDataCouteauSuisse;
+import com.learn.survieapp.readDataClass.SpeakBot;
 
 import java.lang.reflect.Type;
 import java.util.ArrayList;
+import java.util.Locale;
 
 public class CouteauSuisseActivity extends AppCompatActivity implements View.OnClickListener, RecyclerViewAdapted2.OnNoteListener
 {
+
+    /**
+     * Les variables ci-dessous sont utilisé pour le Speakbot
+     */
+    TextToSpeech toSpeech;
+    int result;
+    String genre;
 
     ArrayList<String> valeurTextBox= new ArrayList<>();
     ArrayList<Integer> valeurImageview= new ArrayList<>();
@@ -31,10 +44,11 @@ public class CouteauSuisseActivity extends AppCompatActivity implements View.OnC
     protected void onCreate(Bundle savedInstanceState)
     {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_couteau_suisse);
+        setContentView(R.layout.simple_recycler_view);
 
-        data = findViewById(R.id.gestionrecyclerview);
+        data = findViewById(R.id.recviewgestionactivity);
 
+        bot();
         jSonAction();
 
 
@@ -83,10 +97,15 @@ public class CouteauSuisseActivity extends AppCompatActivity implements View.OnC
         //Liste des objets
         ArrayList<ReaderDataCouteauSuisse> valeur = gson.fromJson(jsonFileString, listUserType);
 
+
+        Resources resources = this.getResources();
+
+
         //remplace les valeur par les valeur du fichier json
         for (int i = 0; i < valeur.size(); i++) {
             Log.i("data", "> Item " + i + "\n" + valeur.get(i));
-            valeurImageview.add(valeur.get(i).getIcon_outil());
+            final int resourceId = resources.getIdentifier(valeur.get(i).getIcon_outil(), "drawable", this.getPackageName());
+            valeurImageview.add(resourceId);
             valeurTextBox.add(valeur.get(i).getData_Text_Type_Icon());
         }
 
@@ -104,10 +123,6 @@ public class CouteauSuisseActivity extends AppCompatActivity implements View.OnC
         switch (v.getId())
         {
             case R.id.gestionvoyageurimage:
-                break;
-            case R.id.gestioncarteimage:
-                break;
-            case R.id.tutoimage:
                 break;
             case R.id.gestionreturn:
                 break;
@@ -128,10 +143,35 @@ public class CouteauSuisseActivity extends AppCompatActivity implements View.OnC
                 Log.i("Type", "Type name : " + position);
                 break;
             case 2:
+                Intent intent = new Intent(CouteauSuisseActivity.this, ActivitySlide.class);
+                startActivity(intent);
                 Log.i("Type", "Type name : " + position);
                 break;
             default:
                 break;
         }
     }
+
+    public void bot(){
+
+        toSpeech = new TextToSpeech(this, new TextToSpeech.OnInitListener() {
+            @Override
+            public void onInit(int status) {
+                if (status == TextToSpeech.SUCCESS) {
+                    result = toSpeech.setLanguage(Locale.FRANCE);
+                    if (result == TextToSpeech.LANG_MISSING_DATA || result == TextToSpeech.LANG_NOT_SUPPORTED)
+                    {
+                        Toast.makeText(getApplicationContext(),"probléme",Toast.LENGTH_SHORT).show();
+                    }else
+                    {
+                        SpeakBot bot = new SpeakBot();
+                        toSpeech.speak(bot.couteauSuisse(), TextToSpeech.QUEUE_FLUSH, null);
+                    }
+                } else {
+                    Toast.makeText(getApplicationContext(), "no mec", Toast.LENGTH_SHORT).show();
+                }
+            }
+        });
+    }
+
 }
