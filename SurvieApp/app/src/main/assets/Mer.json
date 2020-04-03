@@ -1,0 +1,34 @@
+[
+  {
+      "jRegion": "regionmer",
+      "jTextTitre": "But À atteindre en 24 heures",
+      "jTexteDetail": "Dans cette section, il y aura 5 étapes à suivre dans le milieu que vous venez de sélectionner si vous êtes dans la tranche des 24 h.",
+      "jtab_24": ["regionmer","waterbottle","swimming","modification","drop"],
+      "jtab_24_Titre": ["Étape N°1","Étape N°2","Étape N°3","Étape N°4","Étape N°5"],
+      "jtab_24_Detail": ["Si votre bateau a coulé ou si votre avion s'est abimé en mer, la première chose à faire est de partir à la recherche de survivants. Il pourrait y avoir des personnes blessées qui ont besoin d'aide. Essayez de rassembler le plus de survivants possible pour aider les blessés à revenir jusqu'à la côte .En plus, si vous avez des compagnons d'infortune, cela va rendre la situation plus supportable d'un point de vue psychologique.S'il y a d'autres survivants, vous n'aurez pas à faire tout le travail vous-même.Ils pourraient aussi avoir des compétences ou des connaissances intéressantes qui vous aideront à survivre sur l'ile.",
+        "Avant de vous diriger vers la côte, vous devriez rassembler des provisions et du matériel qui pourraient flotter autour de vous. Il pourrait y avoir des choses utiles dans l'eau qui vont vous aider à survivre et à attendre les secours. Essayez de trouver tout ce dont vous pourriez avoir besoin avant de nager vers la côte .Vous pouvez utiliser des feuilles en plastique pour obtenir de l'eau douce.Vous pouvez sécher les tissus et les vêtements pour les utiliser plus tard.Les bouteilles d'eau et autres récipients peuvent vous aider à rester hydraté sur l'ile.Il est toujours possible de survivre une fois hors de l'eau, même si vous n'avez rien rapporté.Attrapez tout ce que vous pouvez.",
+        "Une fois que vous avez rassemblé les survivants qui ont besoin d'aide et que vous avez récupéré toutes les choses qui pourraient être utiles, il est temps de revenir sur la terre ferme. Une fois que vous arrivez sur l'ile, vous devez commencer à évaluer la situation et à vous préparer à survivre .Vous pouvez avancer dans l'eau en ouvrant les bras sur les côtés et en les ramenant vers l'intérieur, devant votre torse. En même temps, ramenez une jambe vers le haut de votre corps et poussez sur l'autre. Alternez entre les deux jambes pour vous aider à rester à la surface.Surveillez la présence de courants forts. Essayez d'éviter de nager dans ces courants ou ils pourraient vous ramener en mer.",
+        "Si vous êtes arrivé vivant jusqu'à l'ile, il pourrait être intéressant de vous renseigner sur les compétences de chacun. Si les autres survivants savent faire certaines choses, ils pourraient s'occuper de tâches spécifiques sur l'ile. Même si personne ne possède de compétences particulières, il est toujours possible de distribuer les choses à faire à tout le monde pour que tout le monde participe .Par exemple, s'il y a un médecin, il pourrait s'occuper de traiter les blessures.Même sans compétences particulières, vous pouvez toujours assigner des tâches de base. Par exemple, quelqu'un pourrait s'occuper du feu tandis qu'une autre personne part à la recherche d'eau potable.",
+        "La première chose que vous devez faire avant tout le reste est de trouver de l'eau. C'est un élément essentiel pour votre santé et pour votre survie. La déshydratation peut tuer un être humain rapidement, parfois en moins de trois jours, c'est pourquoi il est important que vous trouviez rapidement une source d'eau potable. Gardez les idées suivantes en tête pendant que vous partez à la recherche d'eau sur l'ile.Les ruisseaux et les rivières sont souvent des sources d'eau potable. N'oubliez pas que même s'il n'y a pas de sel dans l'eau, elle pourrait quand même contenir des parasites ou des maladies.Il vaudrait toujours mieux que vous fassiez bouillir l'eau que vous voulez boire.Ne buvez pas d'eau salée."]
+    },
+    {
+    "jRegion": "regionmer",
+    "jTextTitre": "But À atteindre en 72 heures",
+    "jTexteDetail": "Allez ce n'est pas fini nous sommes dans la tranche des 72 h là ou le moral chut très vite.",
+    "jtab_72": ["hut","fire","sos2","bandage","yoga"],
+    "jtab_72_Titre": ["Étape N°1","Étape N°2","Étape N°3","Étape N°4","Étape N°5"],
+    "jtab_72_Detail": ["C'est un élément essentiel de votre survie pour rester en sécurité et vous protéger des éléments. Vous pouvez aussi vous y reposer et reprendre des forces pendant que vous réfléchissez à ce que vous allez faire. Il existe différents types d'abris que vous pouvez construire. Cependant, ce sont les matériaux naturels présents sur l'ile qui vont dicter le type d'abri que vous pouvez construire. Par exemple, vous pourriez fabriquer un abri tout simple en suivant les étapes suivantes",
+      "Une fois que vous avez trouvé de l'eau et que vous avez construit un abri, il est temps de vous mettre au chaud. Vous pouvez faire un feu sans aucun outil. Il vous suffit de trouver certains matériaux naturels et de connaitre la bonne technique. En fait, il existe plusieurs techniques pour allumer un feu. Par exemple, vous pourriez jeter un œil à ces étapes pour avoir une idée de la façon dont vous pouvez démarrer un feu sans avoir d'outils",
+      "Si vous espérez qu'on vienne à votre secours, vous pourriez essayer de construire un signal pour qu'on puisse savoir que vous êtes là. Il va permettre aux secours de vous localiser et vous pourrez rentrer chez vous plus vite que si vous n'en aviez pas un. Essayez une de ces idées pour arriver à vous rendre plus visible de loin",
+      "Même si vous n'avez pas le matériel approprié sous la main, vous pouvez quand même dispenser quelques premiers secours de base. Il est important que vous vous occupiez au mieux de vos blessures pour éviter qu'elles empirent ou qu'elles menacent vos chances de survie. Lisez les quelques techniques de base de premiers secours suivantes pour savoir comment y survivre sur l'ile déserte.",
+    "Même si vous avez pris soin des éléments de base de votre survie, vous devez vous assurer de rester concentré, calme et de garder le bon état d'esprit. Si vous n'êtes pas dans le bon état d'esprit, votre survie va devenir beaucoup plus difficile et dangereuse. Essayez de vous concentrer sur des pensées et des attitudes qui aident à votre survie pour rendre le temps que vous passez sur l'ile plus facile"]
+    },
+    {
+    "jRegion": "regionmer",
+    "jTextTitre": "Conseil Pratique",
+    "jTexteDetail": "Ici, vous trouveriez 3 outils bien pratique pour vous aider dans ce milieu-ci.",
+    "jtab_BA": ["justyou"],
+    "jtab_BA_Titre": ["Juste vous"],
+    "jtab_BA_Detail": ["Malheureusement seul sans objet voilà la situation le mieux serait d'utiliser les outils de cette application, on les composant de votre téléphone"]
+    }
+]

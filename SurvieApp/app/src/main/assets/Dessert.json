@@ -1,26 +1,36 @@
 [
-        {
-                "jRegion": "regiondesert",
-                "jTextTitre": "Les Premiéres 24H",
-                "jTexteDetail": "Boussole",
-                "jtab_24": ["regiondesert"],
-                "jtab_24_Titre": ["titre1"],
-                "jtab_24_Detail": ["bonjour je m'appel toto"]
-        },
-        {
-                "jRegion": "regiondesert",
-                "jTextTitre": "Les Premiéres 72H",
-                "jTexteDetail": "Boussole",
-                "jtab_72": ["regionglace","regiondesert"],
-                "jtab_72_Titre": ["titre1","titre2"],
-                "jtab_72_Detail": ["bonjour je m'appel toto","bonjour je m'appel tata"]
-        },
-        {
-                "jRegion": "regiondesert",
-                "jTextTitre": "Ce qui est bon a savoir",
-                "jTexteDetail": "Boussole",
-                "jtab_BA": ["regionglace","regiondesert"],
-                "jtab_BA_Titre": ["titre1","titre2"],
-                "jtab_BA_Detail": ["bonjour je m'appel toto","bonjour je m'appel tata"]
-        }
+  {
+    "jRegion": "regiondesert",
+    "jTextTitre": "But À atteindre en 24 heures",
+    "jTexteDetail": "Dans cette section, il y aura 5 étapes à suivre dans le milieu que vous venez de sélectionner si vous êtes dans la tranche des 24 h.",
+    "jtab_24": ["night","hut","fire","drop","waterbottle"],
+    "jtab_24_Titre": ["Étape N°1","Étape N°2","Étape N°3","Étape N°4","Étape N°5"],
+    "jtab_24_Detail": ["En situation de survie dans le désert, vous ne devez pas vous déplacer durant la journée. L'air nocturne plus frais permet de voyager plus loin et plus vite sans risque d'épuisement par la chaleur. Dans les climats chauds, cette seule décision vous fera économiser près de 3 litres d'eau par jour",
+      "Si vous n'avez pas de voiture où vous abriter, attachez des cordes entre 2 objets situés dans un endroit suffisamment couvert durant la journée et tendez une couverture de secours par-dessus les cordes. Placez-y quelques buissons puis tendez une autre couverture de secours au-dessus",
+      "Le feu est le meilleur moyen de faire des signaux : il crée de la fumée durant la journée et de la lumière la nuit. Quand vous voyagez, gardez un miroir de signalisation à portée de main pour réfléchir la lumière en direction des avions qui passent ou des voitures au loin",
+      "S'il y a récemment eu une forte pluie, vous trouverez des poches d'eau dans les affleurements rocheux ou sur les surfaces pierreuses. La plupart du temps, il vous faudra chercher des endroits qui peuvent dissimuler des eaux souterraines.",
+      "La plupart des gens compliquent leur voyage en sous-estimant leurs besoins en eau. Rationner vos provisions est une erreur qui peut vous couter votre vie."]
+  },
+  {
+    "jRegion": "regiondesert",
+    "jTextTitre": "But À atteindre en 72 heures",
+    "jTexteDetail": "Allez ce n'est pas fini nous sommes dans la tranche des 72 h là ou le moral chut très vite.",
+    "jtab_72": ["wolf","cactus","relax","waterbottle","dig"],
+    "jtab_72_Titre": ["Étape N°1","Étape N°2","Étape N°3","Étape N°4","Étape N°5"],
+    "jtab_72_Detail": ["La plupart des mammifères et reptiles resteront loin de vous, notamment s'ils sont seuls. Faites de même, et surveillez votre environnement pour ne pas marcher accidentellement sur une bestiole. Si possible, faites des recherches préalables sur la vie sauvage dans la région pour savoir comment réagir en présence de certaines espèces.",
+      "Il n'est pas difficile de ne pas toucher aux cactus, mais vous ne savez sans doute pas que certaines plantes épineuses font tomber leurs pointes sur le sol pour répandre leurs graines. Même si ce n'est pas très important, il est préférable que vous restez à l'écart des zones où elles poussent .",
+      "Si vous ressentez des étourdissements ou des nausées ou si votre peau semble froide et moite, cherchez tout de suite un endroit ombragé. Reposez-vous et soignez-vous avec les astuces ci-dessous",
+    "À côté des eaux souterraines, vous trouverez de la rosée qui s'accumule sur les plantes avant l'aube. Vous trouverez également de l'eau dans les troncs d'arbre creux. Rassemblez tous ces liquides avec un vêtement absorbant et versez-les dans un récipient.",
+    "Une fois que vous avez trouvé l'un des endroits cités précédemment, creusez un trou d'environ 30 cm de profondeur. Si vous voyez de l'humidité, agrandissez le trou d'environ 30 cm de diamètre. Attendez quelques heures que le trou se remplisse d'eau"]
+  },
+  {
+    "jRegion": "regiondesert",
+    "jTextTitre": "Conseil Pratique",
+    "jTexteDetail": "Ici, vous trouveriez 3 outils bien pratique pour vous aider dans ce milieu-ci.",
+    "jtab_BA": ["bigbottle","outilsapropos","sunscreen"],
+    "jtab_BA_Titre": ["Une Gourde","Un Couteau","De la crème solaire"],
+    "jtab_BA_Detail": ["Inutile de vous préciser qu'une gourde sera d'une grande utilité",
+      "Une bonne lame sert toujours en temps de survie elle peux nous offrir des heures d'installation et de sécurité.",
+    "Et une Bonne crème solaire !!!!! "]
+  }
 ]

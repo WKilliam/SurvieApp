@@ -1,26 +1,36 @@
 [
   {
     "jRegion": "regionforet",
-    "jTextTitre": "Les Premiéres 24H",
-    "jTexteDetail": "Boussole",
-    "jtab_24": ["regiongelee","regiondesert"],
-    "jtab_24_Titre": ["titre1","titre2"],
-    "jtab_24_Detail": ["bonjour je m'appel toto","bonjour je m'appel tata"]
+    "jTextTitre": "But À atteindre en 24 heures",
+    "jTexteDetail": "Dans cette section, il y aura 5 étapes à suivre dans le milieu que vous venez de sélectionner si vous êtes dans la tranche des 24 h.",
+    "jtab_24": ["waterbottle","drop","dig","iconthermometer","drop2"],
+    "jtab_24_Titre": ["Étape N°1","Étape N°2","Étape N°3","Étape N°4","Étape N°5"],
+    "jtab_24_Detail": [" L’eau potable est la première chose dont vous aurez besoin pour survivre dans les bois. Cherchez des signes de présence d’eau fraiche à proximité comme des étendues de feuillage vert, des zones de faible altitude où l’eau peut s’accumuler et des signes de vie sauvage comme des traces d’animaux. Ça peut vouloir dire qu’un ruisseau, un torrent ou un étang se trouve dans les environs. Même s’il est important de trouver de l’eau pour survivre, vous devez garder en tête que certaines sources ne sont pas sures. Si possible, traitez votre eau avant de l’utilise"
+    ,"L’eau de pluie est l’un des moyens les plus simples et les plus surs de s’hydrater dans les bois. Quand il commencera à pleuvoir, utilisez tous les récipients que vous avez à disposition pour la collecter. Si vous avez une bâche (ou un poncho), suspendez-la à au moins 1 ou 1,5 m du sol en attachant ses extrémités aux arbres puis placez un petit caillou au centre pour créer une dépression qui collectera l’eau",
+    "Vous pouvez trouver de l’eau simplement en creusant un trou assez profond pour atteindre la nappe phréatique ou le niveau à partir duquel le sol est imbibé d’eau. Utilisez une pelle ou un bâton solide pour creuser la terre. Assurez-vous que le trou soit suffisamment large pour qu’il soit facile d’en prélever l’eau",
+    "Si vous trouvez de la glace ou de la neige sur le sol dans les bois, collectez-la pour la faire fondre et obtenir de l’eau potable. Vous pouvez verser la glace ou la neige dans un récipient que vous placerez près d’un feu ou utiliser la température de votre corps pour la faire fondre",
+    "Il est extrêmement important de purifier l’eau que vous trouvez, que ce soit de l’eau de pluie, de la rosée, de la glace ou de la neige. Cela vous évitera de consommer des bactéries qui pourraient vous rendre malade ou même vous tuer. Utilisez un morceau de mouchoir ou de vêtement pour filtrer l’eau et retirer les larges particules puis faites-la bouillir 10 minutes pour tuer les contaminants"]
   },
   {
     "jRegion": "regionforet",
-    "jTextTitre": "Les Premiéres 72H",
-    "jTexteDetail": "Boussole",
-    "jtab_72": ["regiongelee","regiondesert"],
-    "jtab_72_Titre": ["titre1","titre2"],
-    "jtab_72_Detail": ["bonjour je m'appel toto","bonjour je m'appel tata"]
+    "jTextTitre": "But À atteindre en 72 heures",
+    "jTexteDetail": "Allez ce n'est pas fini nous sommes dans la tranche des 72 h là ou le moral chut très vite.",
+    "jtab_72": ["hut","log","bug","berries","mushroom2"],
+    "jtab_72_Titre": ["Étape N°1","Étape N°2","Étape N°3","Étape N°4","Étape N°5"],
+    "jtab_72_Detail": ["Observez autour de vous à la recherche d’un endroit relativement plat avec un arbre dont le tronc est fendu à environ 1 ou 1,5 m du sol. Si possible, cherchez 2 arbres qui ont le tronc fendu à environ 1 ou 1,5 m du sol et qui sont éloignés de 3 m l’un de l’autre.Si vous ne trouvez pas d’arbre dont le tronc se sépare en 2, cherchez une branche ou une buche solide en forme de « Y » pour servir de support à votre abri.Retirez les roches et les débris entre les arbres pour qu’il soit plus confortable de s’y coucher.",
+      " Pour former votre abri, vous aurez besoin d’une poutre de support de 3 m de long qui fait entre 7,5 et 15 cm d’épaisseur. Elle doit être solide et ne pas être en train de pourrir. Plus la branche sera droite, meilleure elle sera pour former la structure de votre abri",
+    "Les insectes sont faciles à attraper et à tuer en plus d’être riches en protéines et en graisses qui vous aideront à survivre dans les bois. Jetez un œil sous les buches pourries à la recherche de fourmis, de termites, de coléoptères et de larves. Cherchez également des vers dans la boue. Vous pouvez manger crus la plupart des insectes, mais évitez les araignées, les tiques et les mouches.Cherchez des insectes sous les pierres, les planches et les autres matériaux. Ne mangez que les insectes que vous avez tués.Les insectes avec une carapace extérieure dure comme les coléoptères et les sauterelles doivent être cuits pendant 5 minutes avant d’être consommés pour éliminer les éventuels parasites.",
+    "Si vous tombez sur un buisson à baies que vous reconnaissez, profitez-en sans hésiter ! Ne consommez jamais de baies que vous ne parvenez pas à identifier, car la plupart sont toxiques. Pour prévenir tous risques, contentez-vous de manger les baies que vous connaissez comme les mures, les framboises et les fraises des bois[16].Évitez toujours les baies blanches, car la plupart sont généralement toxiques pour les humains.",
+    "Si vous savez les reconnaitre, cherchez des champignons sauvages près des endroits sombres et humides ou sur les arbres mourants dans les bois. Toutefois, soyez très prudent(e), car si vous mangez le mauvais champignon, vous tomberez extrêmement malade et vous risquez d’en mourir. Si vous avez le moindre doute sur la comestibilité ou pas d’un champignon, ne le mangez pas !Les morilles ont un chapeau spongieux qui ressemble à un rayon de miel. Vous les trouverez au pied des arbres.La chanterelle a une couleur jaune ou orange claire et pousse près des conifères et des arbres à bois dur.Le pleurote pousse en groupe et ressemble à une huitre ou à une coquille Saint-Jacques."]
   },
   {
     "jRegion": "regionforet",
     "jTextTitre": "Ce qui est bon a savoir",
-    "jTexteDetail": "Boussole",
-    "jtab_BA": ["regiongelee","regiondesert"],
-    "jtab_BA_Titre": ["titre1","titre2"],
-    "jtab_BA_Detail": ["bonjour je m'appel toto","bonjour je m'appel tata"]
+    "jTexteDetail": "Ici, vous trouveriez 3 outils bien pratique pour vous aider dans ce milieu-ci.",
+    "jtab_BA": ["outilsapropos","bigbottle","boussole"],
+    "jtab_BA_Titre": ["Couteau Multi-fonction","Une Gourde","Une Boussole"],
+    "jtab_BA_Detail": ["Un bon couteau Multi-fonction ne sous-estimez jamais le fait d'être trop équipé ",
+      "Inutile de vous préciser qu'une gourde sera d'une grande utilité",
+      "Une bonne boussole pour retrouver la civilisation allée vers le sud, vous aurez plus de chance ;)"]
   }
 ]

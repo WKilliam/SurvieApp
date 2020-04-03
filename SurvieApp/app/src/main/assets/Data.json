@@ -2,33 +2,25 @@
   {
     "dLinkData": "Dessert",
     "dvaleur_Region_Imageview_Data" :"regiondesert",
-    "dmilieu_Region_Data" :"Milieu Dessertique",
-    "dtaux_Survie_Data" :"33 %",
-    "dtaux_Eau_Data" :"33 %",
-    "dtaux_Plante_Data" :"33 %"
+    "dmilieu_Region_Data" :"Milieu Désertique",
+    "dtaux_Survie_Data" :"25 %",
+    "dtaux_Eau_Data" :"5 %",
+    "dtaux_Plante_Data" :"1 %"
   },
   {
     "dLinkData": "Foret",
     "dvaleur_Region_Imageview_Data" :"regionforet",
-    "dmilieu_Region_Data" :"Milieu Foret",
-    "dtaux_Survie_Data" :"33 %",
-    "dtaux_Eau_Data" :"33 %",
-    "dtaux_Plante_Data" :"33 %"
+    "dmilieu_Region_Data" :"Milieu Forêt",
+    "dtaux_Survie_Data" :"80 %",
+    "dtaux_Eau_Data" :"65 %",
+    "dtaux_Plante_Data" :"75 %"
   },
   {
-    "dLinkData": "Montagne",
-    "dvaleur_Region_Imageview_Data" :"regionmontagne",
-    "dmilieu_Region_Data" :"Milieu Montagne",
-    "dtaux_Survie_Data" :"33 %",
-    "dtaux_Eau_Data" :"33 %",
-    "dtaux_Plante_Data" :"33 %"
-  },
-  {
-    "dLinkData": "Gelee",
-    "dvaleur_Region_Imageview_Data" :"regionglace",
-    "dmilieu_Region_Data" :"Milieu Gelée",
-    "dtaux_Survie_Data" :"33 %",
-    "dtaux_Eau_Data" :"33 %",
-    "dtaux_Plante_Data" :"33 %"
+    "dLinkData": "Mer",
+    "dvaleur_Region_Imageview_Data" :"regionmer",
+    "dmilieu_Region_Data" :"Milieu Océanique( île Déserte)",
+    "dtaux_Survie_Data" :"35 %",
+    "dtaux_Eau_Data" :"10 %",
+    "dtaux_Plante_Data" :"0 %"
   }
 ]

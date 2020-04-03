@@ -7,33 +7,24 @@ import androidx.recyclerview.widget.RecyclerView;
 import android.content.Intent;
 import android.content.res.Resources;
 import android.os.Bundle;
-import android.speech.tts.TextToSpeech;
 import android.util.Log;
 import android.view.View;
-import android.widget.Toast;
 
 import com.google.gson.Gson;
 import com.google.gson.reflect.TypeToken;
 import com.learn.survieapp.R;
 import com.learn.survieapp.activitySecondaire.ActivitySlide;
 import com.learn.survieapp.activitySecondaire.CompassActivity;
+import com.learn.survieapp.activitySecondaire.MorseTranslateActivity;
 import com.learn.survieapp.adaptateurRecyclerView.RecyclerViewAdapted2;
 import com.learn.survieapp.readDataClass.ReaderDataCouteauSuisse;
-import com.learn.survieapp.readDataClass.SpeakBot;
 
 import java.lang.reflect.Type;
 import java.util.ArrayList;
-import java.util.Locale;
 
 public class CouteauSuisseActivity extends AppCompatActivity implements View.OnClickListener, RecyclerViewAdapted2.OnNoteListener
 {
 
-    /**
-     * Les variables ci-dessous sont utilisé pour le Speakbot
-     */
-    TextToSpeech toSpeech;
-    int result;
-    String genre;
 
     ArrayList<String> valeurTextBox= new ArrayList<>();
     ArrayList<Integer> valeurImageview= new ArrayList<>();
@@ -48,7 +39,7 @@ public class CouteauSuisseActivity extends AppCompatActivity implements View.OnC
 
         data = findViewById(R.id.recviewgestionactivity);
 
-        bot();
+
         jSonAction();
 
 
@@ -134,44 +125,31 @@ public class CouteauSuisseActivity extends AppCompatActivity implements View.OnC
     @Override
     public void onNoteClick(int position)
     {
+        Intent intentcommun = new Intent(CouteauSuisseActivity.this, ActivitySlide.class);
+        Intent intenttranslate = new Intent(CouteauSuisseActivity.this, MorseTranslateActivity.class);
         switch (position){
-            case 0:
+            case 0://boussole
                 Intent intentcompas = new Intent(CouteauSuisseActivity.this, CompassActivity.class);
                 startActivity(intentcompas);
                 break;
-            case 1:
-                Log.i("Type", "Type name : " + position);
+            case 1://champignion
+                intentcommun.putExtra("JsonFile","ChampignionData.json");
+                intentcommun.putExtra("index","Champinion");
+                Log.i("Type", "Type name : " + intentcommun.getStringExtra("JsonFile"));
+                Log.i("Type", "Type name : " + intentcommun.getStringExtra("index"));
+                startActivity(intentcommun);
+
                 break;
-            case 2:
-                Intent intent = new Intent(CouteauSuisseActivity.this, ActivitySlide.class);
-                startActivity(intent);
-                Log.i("Type", "Type name : " + position);
+            case 2://translate
+                intenttranslate.putExtra("Typage","Morse");
+                startActivity(intenttranslate);
+                break;
+            case 3://sos
+                intenttranslate.putExtra("Typage","SOS");
+                startActivity(intenttranslate);
                 break;
             default:
                 break;
         }
     }
-
-    public void bot(){
-
-        toSpeech = new TextToSpeech(this, new TextToSpeech.OnInitListener() {
-            @Override
-            public void onInit(int status) {
-                if (status == TextToSpeech.SUCCESS) {
-                    result = toSpeech.setLanguage(Locale.FRANCE);
-                    if (result == TextToSpeech.LANG_MISSING_DATA || result == TextToSpeech.LANG_NOT_SUPPORTED)
-                    {
-                        Toast.makeText(getApplicationContext(),"probléme",Toast.LENGTH_SHORT).show();
-                    }else
-                    {
-                        SpeakBot bot = new SpeakBot();
-                        toSpeech.speak(bot.couteauSuisse(), TextToSpeech.QUEUE_FLUSH, null);
-                    }
-                } else {
-                    Toast.makeText(getApplicationContext(), "no mec", Toast.LENGTH_SHORT).show();
-                }
-            }
-        });
-    }
-
 }

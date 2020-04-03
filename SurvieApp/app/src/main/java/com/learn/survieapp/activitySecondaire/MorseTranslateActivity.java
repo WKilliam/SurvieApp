@@ -1,11 +1,13 @@
-package com.learn.survieapp.activityPrincipaux;
+package com.learn.survieapp.activitySecondaire;
 
 import androidx.annotation.RequiresApi;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.media.MediaPlayer;
 import android.os.Build;
 import android.os.Bundle;
+import android.speech.tts.TextToSpeech;
 import android.util.Log;
 import android.view.View;
 import android.widget.TextView;
@@ -16,6 +18,7 @@ import java.util.ArrayList;
 public class MorseTranslateActivity extends AppCompatActivity implements View.OnClickListener {
 
     MediaPlayer mediaPlayer;
+
     
     ArrayList<MediaPlayer> listMedia =new ArrayList<>();
     @RequiresApi(api = Build.VERSION_CODES.LOLLIPOP)
@@ -23,6 +26,18 @@ public class MorseTranslateActivity extends AppCompatActivity implements View.On
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.morsetranslate);
+
+        Intent srcintent = getIntent();
+        String typage = srcintent.getStringExtra("Typage");
+
+        if(typage.equals("Morse")){
+
+            findViewById(R.id.buttonsos).setVisibility(View.INVISIBLE);
+
+        }else if(typage.equals("SOS")){
+            findViewById(R.id.submitmorse).setVisibility(View.INVISIBLE);
+            findViewById(R.id.edittextmorse).setVisibility(View.INVISIBLE);
+        }
 
     }
 
@@ -59,10 +74,21 @@ public class MorseTranslateActivity extends AppCompatActivity implements View.On
                     }
                 }
                 listMedia.clear();
+                break;
+            case R.id.buttonsos:
+
+                try {
+
+                    mediaPlayer = MediaPlayer.create(getApplicationContext(), R.raw.fatal);
+                    mediaPlayer.start();
+                    Thread.sleep(mediaPlayer.getDuration());
+                } catch (InterruptedException e) {
+                    e.printStackTrace();
+                }
+                break;
 
             default:
                 break;
         }
-
     }
 }

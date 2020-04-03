@@ -7,6 +7,7 @@ import androidx.recyclerview.widget.RecyclerView;
 import android.content.Intent;
 import android.content.res.Resources;
 import android.os.Bundle;
+import android.util.Log;
 
 import com.google.gson.Gson;
 import com.google.gson.reflect.TypeToken;
@@ -55,9 +56,9 @@ public class GuideActivity extends AppCompatActivity implements  AdaptedGuide.On
 
 
         //transforme tous le json en String
-        String jsonFileString = ReaderDataGuideActivity.getJsonFromAssets(getApplicationContext(), "Dessertkkk.json");
+        String jsonFileString = ReaderDataGuideActivity.getJsonFromAssets(getApplicationContext(), data);
 
-        //Log.i("data", jsonFileString);
+        Log.i("data", jsonFileString);
 
         // création de l'object Gson
         Gson gson = new Gson();
@@ -71,11 +72,9 @@ public class GuideActivity extends AppCompatActivity implements  AdaptedGuide.On
 
         Resources resources = this.getResources();
 
-
-
         //remplace les valeur par les valeur du fichier json
         for (int i = 0; i < valeur.size(); i++) {
-
+            Log.i("test","=========== "+" ========= "+valeur.get(i).getjRegion());
             final int resourceId = resources.getIdentifier(valeur.get(i).getjRegion(), "drawable", this.getPackageName());
             mRegionIcon.add(resourceId);
             mSurvieTypeText.add(valeur.get(i).getjTextTitre());

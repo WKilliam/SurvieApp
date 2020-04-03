@@ -1,0 +1,7 @@
+[
+  {
+    "tuto_Image": ["iconblackplante","iconblacksurvie","iconblackeau","outilsapropos","voyageur","regiondesert"],
+    "tuto_Nom": ["Icône des bonnes Plantes ","Icône de Survie","Icône de chance de trouver de l'eau","Couteau Suisse","À propos","Les différents types de milieu hostile"],
+    "tuto_Detail": ["L'icône des bonnes Plantes vous donne le pourcentage d'utilisation de la faune végétal de la région choisie.","Vous indique le potentiel de chance que vous avez à survivre dans ce milieu","Vous indique le pourcentage de chance que vous avez a trouvez de l'eau dans ce milieu ","Le couteau suisse vous offre plusieurs outils comme une boussole, un traducteur morse, un guide des champignons et bien plus. ","Icônes représentant la page à propos","Les icônes de ce genre sont généralement là pour vous indiquer les différents milieux de survie dont vous aurez peut-être a affronter."]
+  }
+]

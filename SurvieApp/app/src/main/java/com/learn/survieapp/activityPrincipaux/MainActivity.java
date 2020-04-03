@@ -17,11 +17,10 @@ import android.widget.Toast;
 import com.google.gson.Gson;
 import com.google.gson.reflect.TypeToken;
 import com.learn.survieapp.R;
+import com.learn.survieapp.activitySecondaire.AProposActivity;
 import com.learn.survieapp.activitySecondaire.ActivitySlide;
 import com.learn.survieapp.adaptateurRecyclerView.FristActRVAdapted;
-import com.learn.survieapp.readDataClass.ReadPrototype;
 import com.learn.survieapp.readDataClass.ReaderData;
-import com.learn.survieapp.readDataClass.SpeakBot;
 
 import java.lang.reflect.Type;
 import java.util.ArrayList;
@@ -29,11 +28,7 @@ import java.util.Locale;
 
 public class MainActivity extends AppCompatActivity implements View.OnClickListener, FristActRVAdapted.OnNoteListener , TextToSpeech.OnInitListener{
 
-    /**
-     * Les variables ci-dessous sont utilisé pour le Speakbot
-     */
-    TextToSpeech toSpeech;
-    int result;
+
     /**
      * Les variables ci-dessous servent à récupéré des valeurs bien presice pour l'affichage du recyclerview
      */
@@ -51,7 +46,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        bot();
+        //bot();
         jSonAction();
         data = findViewById(R.id.gestionrecyclerview);
 
@@ -66,37 +61,13 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         data.setAdapter(mfristActRVAdapted);
     }
 
-    public void bot(){
-
-        toSpeech = new TextToSpeech(this, new TextToSpeech.OnInitListener() {
-            @Override
-            public void onInit(int status) {
-                if (status == TextToSpeech.SUCCESS) {
-                    result = toSpeech.setLanguage(Locale.FRANCE);
-                    if (result == TextToSpeech.LANG_MISSING_DATA || result == TextToSpeech.LANG_NOT_SUPPORTED)
-                    {
-                        Toast.makeText(getApplicationContext(),"probléme",Toast.LENGTH_SHORT).show();
-                    }else
-                    {
-                        SpeakBot bot = new SpeakBot();
-                        toSpeech.speak(bot.testbot("je m'appel lol"), TextToSpeech.QUEUE_FLUSH, null);
-                    }
-                } else {
-                    Toast.makeText(getApplicationContext(), "no mec", Toast.LENGTH_SHORT).show();
-                }
-            }
-        });
-    }
-
     @Override
     public void onNoteClick(int position) {
 
         String region = mLinkData.get(position);
         String dataTake = region+".json";
-        Log.i("data", "> ItemImage JSON " + position + "\n" + dataTake );
         Intent intentinfos = new Intent(MainActivity.this,GuideActivity.class);
         intentinfos.putExtra("DataType",dataTake);
-        toSpeech.stop();
         startActivity(intentinfos);
     }
     /**
@@ -162,13 +133,11 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                             case 0: // Un Aventurier
                                 Log.i("test","homme");
                                 intentGenre.putExtra("Genre","Homme");
-                                toSpeech.stop();
                                 startActivity(intentGenre);
                                 break;
                             case 1:// Un Aventuriére
                                 Log.i("test","femme");
                                 intentGenre.putExtra("Genre","Femme");
-                                toSpeech.stop();
                                 startActivity(intentGenre);
                                 break;
                             default:
@@ -181,14 +150,15 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 break;
             case R.id.gestionreturn:
                 Intent intentcouteausuisse = new Intent(MainActivity.this, CouteauSuisseActivity.class);
-                toSpeech.stop();
+
                 startActivity(intentcouteausuisse);
                 Log.i("test","couteau");
                 break;
             case R.id.imageViewtutoriel:
                 Intent intenttuto = new Intent(MainActivity.this, ActivitySlide.class);
-                intenttuto.putExtra("INDEX","TUTO");
-                toSpeech.stop();
+                intenttuto.putExtra("JsonFile","Tuto.json");
+                intenttuto.putExtra("index","tuto");
+
                 startActivity(intenttuto);
                 break;
             default:
@@ -200,12 +170,10 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     public void onInit(int status) {
 
     }
-    protected void onDestroy(){
-        super.onDestroy();
-        if (toSpeech!=null)
-        {
-            toSpeech.stop();
-            toSpeech.shutdown();
-        }
+    @Override
+    public void onResume()
+    {  // After a pause OR at startup
+        super.onResume();
+        //Refresh your stuff here
     }
 }

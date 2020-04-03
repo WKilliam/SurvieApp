@@ -1,0 +1,8 @@
+[
+  {
+    "Champignion_Image": ["armillariamellea","suillusgranulatus","lentinulaedodes","pleurotuscitrinopileatus","pleurotuscornucopiae","pleurotuseryngii","pleurotusostreatus"],
+    "Champignion_Nom": ["Armillariamellea","Suillus Granulatus","Lentinula Edodes","Pleurotus ostreatus","Pleurotus cornucopiae","Pleurotus eryngii","Pleurotus citrinopileatus"],
+    "Champignion_Detail": ["Mortel","Mortel","Comestible","Comestible","Comestible","Comestible","Comestible"],
+    "Champignion_Comestible": ["NON","NON","OUI","OUI","OUI","OUI","OUI"]
+  }
+]
