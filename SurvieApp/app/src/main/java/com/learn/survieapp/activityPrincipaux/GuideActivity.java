@@ -87,22 +87,22 @@ public class GuideActivity extends AppCompatActivity implements  AdaptedGuide.On
 
     public void startactivityselected(int stat){
 
-        Intent intent24 = new Intent(GuideActivity.this, ActivitySlide.class);
+        Intent intent = new Intent(GuideActivity.this, ActivitySlide.class);
         switch (stat){
             case 0 :
-                intent24.putExtra("JsonFile",datatype);
-                intent24.putExtra("index","24");
-                startActivity(intent24);
+                intent.putExtra("JsonFile",datatype);
+                intent.putExtra("index","24");
+                startActivity(intent);
                 break;
             case 1 :
-                intent24.putExtra("JsonFile",datatype);
-                intent24.putExtra("index","72");
-                startActivity(intent24);
+                intent.putExtra("JsonFile",datatype);
+                intent.putExtra("index","72");
+                startActivity(intent);
                 break;
             case 2 :
-                intent24.putExtra("JsonFile",datatype);
-                intent24.putExtra("index","BonASavoir");
-                startActivity(intent24);
+                intent.putExtra("JsonFile",datatype);
+                intent.putExtra("index","BonASavoir");
+                startActivity(intent);
                 break;
             default:
                 break;

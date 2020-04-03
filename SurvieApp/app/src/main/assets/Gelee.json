@@ -3,7 +3,7 @@
     "jRegion": "regiongelee",
     "jTextTitre": "Les Premiéres 24H",
     "jTexteDetail": "Boussole",
-    "jtab_24": ["regiongelee","regiondesert"],
+    "jtab_24": ["regionglace","regiondesert"],
     "jtab_24_Titre": ["titre1","titre2"],
     "jtab_24_Detail": ["bonjour je m'appel toto","bonjour je m'appel tata"]
   },

@@ -42,29 +42,24 @@ public class ActivitySlide extends AppCompatActivity {
     private String[] sDataValueInputTextDetail;
     private int[] sDataValueInputImageview;
 
-    private ArrayList<String> sTakedTitle;
-    private ArrayList<String> sTakedDetail;
-    private ArrayList<Integer> sTakedImage;
+    private ArrayList<String> sTakedTitle= new ArrayList();
+    private ArrayList<String> sTakedDetail= new ArrayList();
+    private ArrayList<Integer> sTakedImage= new ArrayList();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.layout_all_activity_scrollview);
 
-        Intent srcintent = getIntent();
-        sJsonFileData = srcintent.getStringExtra("JsonFile");
-        sIndexData = srcintent.getStringExtra("index");
+        //Intent srcintent = getIntent();
+        //sJsonFileData = srcintent.getStringExtra("JsonFile");
+        //sIndexData = srcintent.getStringExtra("index");
 
 
         sLinearLayout = findViewById(R.id.linearlayoutid);
         sSlideview = findViewById(R.id.viewpageid);
 
-
-
-
-
-
-        jSonAction("Gelee.json","24");
+        jSonAction("Dessert.json","BonASavoir");
 
         sSliderAdapter = new SliderAdapter(this, sDataValueInputImageview, sDataValueInputTitle, sDataValueInputTextDetail);
 
@@ -105,10 +100,13 @@ public class ActivitySlide extends AppCompatActivity {
         //Liste des objets
         ArrayList<ReaderDataGuideActivity> valeur = gson.fromJson(jsonFileString, listUserType);
 
-        String s = valeur.get(0).getJtab_24()[0];
+        ArrayList<ReaderDataGuideActivity> s = valeur;
 
-        Log.i("data", String.valueOf(s));
+        Log.i("data", "@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@  "+s);
 
+        String readerDataGuideActivity = valeur.get(1).getJtab_72()[0];
+
+        Log.i("data", "@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@  "+readerDataGuideActivity);
         //remplace les valeur par les valeur du fichier json
         moveTab(caract,valeur);
     }
@@ -140,11 +138,15 @@ public class ActivitySlide extends AppCompatActivity {
                 }
                 break;
             case "72":
-                for (int i = 0; i <valeur.get(1).getJtab_72().length ; i++) {
+                sTakedTitle = new ArrayList();
+                sTakedDetail = new ArrayList();
+                sTakedImage = new ArrayList();
+                for (int i = 0; i < valeur.get(1).getJtab_72().length ; i++) {
                     sTakedTitle.add(valeur.get(1).getJtab_72_Titre()[i]);
                     sTakedDetail.add(valeur.get(1).getJtab_72_Detail()[i]);
                     final int resourceId = resources.getIdentifier(valeur.get(1).getJtab_72()[i], "drawable", this.getPackageName());
                     sTakedImage.add(resourceId);
+                    Log.i("tableau ","Ressourcecheck = "+sTakedImage);
                 }
                 sDataValueInputTitle = new String[sTakedTitle.size()];
                 sDataValueInputTextDetail= new String[sTakedDetail.size()];
@@ -156,12 +158,15 @@ public class ActivitySlide extends AppCompatActivity {
                 }
                 break;
             case "BonASavoir":
-                for (int i = 0; i <valeur.get(2).getJtab_BA().length ; i++) {
+                sTakedTitle = new ArrayList();
+                sTakedDetail = new ArrayList();
+                sTakedImage = new ArrayList();
+                for (int i = 0; i < valeur.get(2).getJtab_BA().length ; i++) {
                     sTakedTitle.add(valeur.get(2).getJtab_BA_Titre()[i]);
                     sTakedDetail.add(valeur.get(2).getJtab_BA_Detail()[i]);
-                    final int resourceId = resources.getIdentifier(valeur.get(2).getJtab_72()[i], "drawable", this.getPackageName());
+                    final int resourceId = resources.getIdentifier(valeur.get(2).getJtab_BA()[i], "drawable", this.getPackageName());
                     sTakedImage.add(resourceId);
-
+                    Log.i("tableau ","Ressourcecheck = "+sTakedImage);
                 }
                 sDataValueInputTitle = new String[sTakedTitle.size()];
                 sDataValueInputTextDetail= new String[sTakedDetail.size()];
