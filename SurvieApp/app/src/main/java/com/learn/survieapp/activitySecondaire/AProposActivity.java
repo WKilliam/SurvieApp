@@ -6,7 +6,6 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.widget.ImageView;
 import android.widget.TextView;
-
 import com.learn.survieapp.R;
 
 public class AProposActivity extends AppCompatActivity {

@@ -11,6 +11,8 @@ import android.speech.tts.TextToSpeech;
 import android.util.Log;
 import android.view.View;
 import android.widget.TextView;
+import android.widget.Toast;
+
 import com.learn.survieapp.R;
 import com.learn.survieapp.readDataClass.TranslateBot;
 import java.util.ArrayList;
@@ -68,7 +70,6 @@ public class MorseTranslateActivity extends AppCompatActivity implements View.On
                     try {
                         listMedia.get(i).start();
                         Thread.sleep(listMedia.get(i).getDuration()*2);
-                        Log.i("test ","=========== "+i+" =========="+listMedia.get(i));
                     } catch (InterruptedException e) {
                         e.printStackTrace();
                     }
@@ -83,7 +84,7 @@ public class MorseTranslateActivity extends AppCompatActivity implements View.On
                     mediaPlayer.start();
                     Thread.sleep(mediaPlayer.getDuration());
                 } catch (InterruptedException e) {
-                    e.printStackTrace();
+                    Toast.makeText(getApplicationContext(), "ATTENDEZ LA FIN DU SON ", Toast.LENGTH_SHORT).show();
                 }
                 break;
 
