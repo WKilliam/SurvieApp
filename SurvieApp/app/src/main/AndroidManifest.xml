@@ -12,7 +12,7 @@
         <activity android:name=".activitySecondaire.ActivitySlide" >
 
         </activity>
-        <activity android:name=".activityPrincipaux.PropotypeActivity" >
+        <activity android:name=".activityPrincipaux.MorseTranslateActivity" >
 
         </activity>
         <activity android:name=".adaptateurRecyclerView.AdaptedGuide" />
@@ -21,12 +21,12 @@
         <activity android:name=".activityPrincipaux.CouteauSuisseActivity" />
         <activity android:name=".activityPrincipaux.AProposActivity" />
         <activity android:name=".activityPrincipaux.MainActivity">
+
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
-
         </activity>
     </application>
 
